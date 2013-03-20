@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js">
     <Files>
       <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js" Line="36" Column="29" />
-      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\FPSInputController.js" Line="16" Column="1" />
+      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\FPSInputController.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
