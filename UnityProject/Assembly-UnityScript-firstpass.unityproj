@@ -46,7 +46,6 @@
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js" />
      <Compile Include="Assets\Standard Assets\Adventure Time\Player Controller\FPSInputController.js" />
-     <Compile Include="Assets\Standard Assets\Adventure Time\Player Controller\NewMotor.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
