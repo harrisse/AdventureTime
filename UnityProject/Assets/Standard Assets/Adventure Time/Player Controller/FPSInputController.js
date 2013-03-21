@@ -1,10 +1,12 @@
-private var motor : CharacterMotor;
+// private var motor : CharacterMotor;
+private var motor : NewMotor;
 private var graphics : UnityEngine.GameObject;
 var leftTexture : UnityEngine.Texture;
 var rightTexture : UnityEngine.Texture;
 
 function Awake () {
-	motor = GetComponent(CharacterMotor);
+	//motor = GetComponent(CharacterMotor);
+	motor = GetComponent(NewMotor);
 	graphics = GameObject.Find("Graphics");
 }
 
@@ -18,5 +20,6 @@ function Update () {
 }
 
 // Require a character controller to be attached to the same game object
-@script RequireComponent (CharacterMotor)
+// @script RequireComponent (CharacterMotor)
+@script RequireComponent (NewMotor)
 @script AddComponentMenu ("Character/FPS Input Controller")

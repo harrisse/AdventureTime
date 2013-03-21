@@ -12,7 +12,7 @@ var useFixedUpdate : boolean = true;
 
 // The current global direction we want the character to move in.
 @System.NonSerialized
-var inputMoveDirection : Vector3 = Vector3.zero;
+var inputMoveDirection : Vector2 = Vector2.zero;
 
 // Is the jump button held down? We use this interface instead of checking
 // for the jump button directly so this script can also be used by AIs.
@@ -354,8 +354,7 @@ private function ApplyInputVelocityChange (velocity : Vector2) {
 	}
 	// If we're in the air and don't have control, don't apply any velocity change at all.
 	// If we're on the ground and don't have control we do apply it - it will correspond to friction.
-	if (grounded || canControl)
-		velocity += velocityChangeVector;
+	if (grounded || canControl) velocity += velocityChangeVector;
 	
 	if (grounded) {
 		// When going uphill, the CharacterController will automatically move up by the needed amount.
@@ -374,11 +373,9 @@ private function ApplyGravityAndJumping (velocity : Vector2) {
 		jumping.lastButtonDownTime = -100;
 	}
 	
-	if (inputJump && jumping.lastButtonDownTime < 0 && canControl)
-		jumping.lastButtonDownTime = Time.time;
+	if (inputJump && jumping.lastButtonDownTime < 0 && canControl) jumping.lastButtonDownTime = Time.time;
 	
-	if (grounded)
-		velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
+	if (grounded) velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
 	else {
 		velocity.y = movement.velocity.y - movement.gravity * Time.deltaTime;
 		

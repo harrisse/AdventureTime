@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Adventure Time\Player Controller\NewMotor.js">
     <Files>
-      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js" Line="337" Column="20" />
+      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\CharacterMotor.js" Line="163" Column="17" />
+      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\NewMotor.js" Line="15" Column="24" />
+      <File FileName="Assets\Standard Assets\Adventure Time\Player Controller\FPSInputController.js" Line="23" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
