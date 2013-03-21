@@ -21,9 +21,7 @@ var inputJump : boolean = false;
 
 class CharacterMotorMovement {
 	// The maximum horizontal speed when moving
-	var maxForwardSpeed : float = 10.0;
-	var maxSidewaysSpeed : float = 10.0;
-	var maxBackwardsSpeed : float = 10.0;
+	var maxSpeed : float = 10.0;
 	
 	// Curve for multiplying speed based on slope (negative = downwards)
 	var slopeSpeedMultiplier : AnimationCurve = AnimationCurve(Keyframe(-90, 1), Keyframe(0, 1), Keyframe(90, 0));
@@ -158,22 +156,19 @@ var sliding : CharacterMotorSliding = CharacterMotorSliding();
 
 @System.NonSerialized
 var grounded : boolean = true;
-
 @System.NonSerialized
 var groundNormal : Vector2 = Vector2.zero;
 
 private var lastGroundNormal : Vector2 = Vector2.zero;
-
 private var tr : Transform;
-
 private var controller : CharacterController;
 
-function Awake () {
+function Awake() {
 	controller = GetComponent (CharacterController);
 	tr = transform;
 }
 
-private function UpdateFunction () {
+private function UpdateFunction() {
 	var velocity : Vector2 = movement.velocity;
 	
 	// Update velocity based on input, gravity, and jumping
@@ -185,8 +180,7 @@ private function UpdateFunction () {
 	if (MoveWithPlatform()) {
 		var newGlobalPoint : Vector2 = movingPlatform.activePlatform.TransformPoint(movingPlatform.activeLocalPoint);
 		moveDistance = (newGlobalPoint - movingPlatform.activeGlobalPoint);
-		if (moveDistance != Vector2.zero)
-			controller.Move(moveDistance);
+		if (moveDistance != Vector2.zero) controller.Move(moveDistance);
 		
 		// Support moving platform rotation as well:
         var newGlobalRotation : Quaternion = movingPlatform.activePlatform.rotation * movingPlatform.activeLocalRotation;
@@ -291,14 +285,10 @@ private function UpdateFunction () {
 		// This works best when the character is standing on moving tilting platforms. 
 		movingPlatform.activeGlobalPoint = tr.position + Vector2.up * (controller.center.y - controller.height*0.5 + controller.radius);
 		movingPlatform.activeLocalPoint = movingPlatform.activePlatform.InverseTransformPoint(movingPlatform.activeGlobalPoint);
-		
-		// Support moving platform rotation as well:
-        movingPlatform.activeGlobalRotation = tr.rotation;
-        movingPlatform.activeLocalRotation = Quaternion.Inverse(movingPlatform.activePlatform.rotation) * movingPlatform.activeGlobalRotation; 
 	}
 }
 
-function FixedUpdate () {
+function FixedUpdate() {
 	if (movingPlatform.enabled) {
 		if (movingPlatform.activePlatform != null) {
 			if (!movingPlatform.newPlatform) {
@@ -317,15 +307,14 @@ function FixedUpdate () {
 		}
 	}
 	
-	if (useFixedUpdate)
-		UpdateFunction();
+	if (useFixedUpdate) UpdateFunction();
 }
 
-function Update () {
+function Update() {
 	if (!useFixedUpdate) UpdateFunction();
 }
 
-private function ApplyInputVelocityChange (velocity : Vector2) {	
+private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
 	
 	var desiredVelocity : Vector2;
@@ -545,10 +534,7 @@ function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 	if (desiredMovementDirection == Vector2.zero)
 		return 0;
 	else {
-		var zAxisEllipseMultiplier : float = (desiredMovementDirection.z > 0 ? movement.maxForwardSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
-		var temp : Vector3 = new Vector2(desiredMovementDirection.x, 0).normalized;
-		var length : float = new Vector2(temp.x, 0).magnitude * movement.maxSidewaysSpeed;
-		return length;
+		return movement.maxSpeed;
 	}
 }
 
