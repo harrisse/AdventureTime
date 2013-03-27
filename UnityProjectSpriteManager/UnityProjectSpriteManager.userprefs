@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterMotor.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WormScript.js">
     <Files>
-      <File FileName="Assets\Scripts\WormScript.js" Line="13" Column="70" />
-      <File FileName="Assets\Scripts\FPSInputController.js" Line="14" Column="50" />
-      <File FileName="Assets\Scripts\CharacterMotor.js" Line="441" Column="3" />
+      <File FileName="Assets\Scripts\Sprites\FinnTestWalking.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\WormScript.js" Line="15" Column="89" />
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="442" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
