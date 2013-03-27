@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sprites\FinnTestStabbing.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Sprites\FinnTestWalking.cs" Line="5" Column="1" />
+      <File FileName="Assets\Scripts\Sprites\FinnTestStabbing.cs" Line="14" Column="56" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
