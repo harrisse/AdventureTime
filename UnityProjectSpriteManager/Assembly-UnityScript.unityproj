@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{EA7910DD-07C2-69F0-2B9E-0ED78CC0F162}</ProjectGuid>
+	<ProjectGuid>{AC3859E9-204E-1186-F318-02487579FCB7}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -45,10 +45,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MovingPlatform.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{ACAC7F0E-D681-410A-B8C5-0A9AC3F60853}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+     <Compile Include="Assets\Scripts\CharacterMotor.js" />
+     <Compile Include="Assets\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Scripts\WormScript.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterMotor.js">
+    <Files>
+      <File FileName="Assets\Scripts\WormScript.js" Line="13" Column="70" />
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="14" Column="50" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="441" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{570E9269-3E43-04C2-A7E6-B0A0FC3E8602}</ProjectGuid>
+	<ProjectGuid>{CD6B9D4B-A7FA-546D-CC79-EC4DE095E66B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,9 +49,6 @@
      <Compile Include="Assets\Scripts\Sprites\SpriteManager\LinkedSpriteManager.cs" />
      <Compile Include="Assets\Scripts\Sprites\SpriteManager\Sprite.cs" />
      <Compile Include="Assets\Scripts\Sprites\SpriteManager\SpriteManager.cs" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
