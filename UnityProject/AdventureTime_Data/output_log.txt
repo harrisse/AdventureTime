@@ -9,13 +9,11 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.138 seconds
+Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.105 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
-XInput1_3.dll not found.
 <RI> Input initialized.
-Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Boo.Lang.dll (this message is harmless)
