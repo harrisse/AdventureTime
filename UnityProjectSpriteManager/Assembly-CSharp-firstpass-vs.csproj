@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FDE690F1-626F-FFA0-5754-E83120972A79}</ProjectGuid>
+	<ProjectGuid>{D3DC5488-69C9-A73F-4576-94ED0E11FC7E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -44,9 +44,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\SpriteManager\LinkedSpriteManager.cs" />
-     <Compile Include="Assets\Standard Assets\SpriteManager\Sprite.cs" />
-     <Compile Include="Assets\Standard Assets\SpriteManager\SpriteManager.cs" />
+     <Compile Include="Assets\Plugins\LinkedSpriteManager.cs" />
+     <Compile Include="Assets\Plugins\Sprite.cs" />
+     <Compile Include="Assets\Plugins\SpriteManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,9 +2,13 @@
 #pragma implicit
 #pragma downcast
 
+// Animation stuff
+var spriteManager : LinkedSpriteManager;
+var sprite : Sprite;
+var walking : UVAnimation;
+
 // Does this script currently respond to input?
 var canControl : boolean = true;
-
 var useFixedUpdate : boolean = true;
 
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
@@ -164,7 +168,16 @@ private var tr : Transform;
 private var controller : CharacterController;
 
 function Awake() {
-	controller = GetComponent (CharacterController);
+	sprite = spriteManager.AddSprite(gameObject,4,4,new Vector2(0, .25), new Vector2(.5, .25), new Vector3(0,1,0), true);
+	walking = new UVAnimation();
+	walking.name="walking";
+	walking.SetAnim(walking.BuildUVAnim(new Vector2(0,.75f),new Vector2(.5f,.25f),1,3,3,2));
+	walking.loopCycles=-1; // makes animation loop infinitely
+	walking.loopReverse = true; // makes animation go in reverse after it's completed
+	sprite.AddAnimation(walking);
+	sprite.PlayAnim("walking");
+
+	controller = GetComponent(CharacterController);
 	tr = transform;
 }
 
