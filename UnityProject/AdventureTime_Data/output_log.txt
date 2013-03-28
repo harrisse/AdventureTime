@@ -19,3 +19,19 @@ Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_D
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
+Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProject\AdventureTime_Data\Managed\Boo.Lang.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 0.366426 ms (FindLiveObjects: 0.004947 ms CreateObjectMapping: 0.007858 ms MarkObjects: 0.083821 ms  DeleteObjects: 0.003783 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 0.353620 ms (FindLiveObjects: 0.004947 ms CreateObjectMapping: 0.004947 ms MarkObjects: 0.083239 ms  DeleteObjects: 0.003492 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 0.354784 ms (FindLiveObjects: 0.004656 ms CreateObjectMapping: 0.006694 ms MarkObjects: 0.082074 ms  DeleteObjects: 0.003492 ms)
+

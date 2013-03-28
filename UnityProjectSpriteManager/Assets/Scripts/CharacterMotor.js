@@ -169,8 +169,8 @@ private var controller : CharacterController;
 function Awake() {
 	// CharacterAnimation.init(object, scale, uvStart, uvSize, offset)
 	characterAnimation = GetComponent(CharacterAnimation);
-	characterAnimation.init(gameObject, new FinnAnimations());
-	characterAnimation.run();
+	characterAnimation.init(gameObject);
+	characterAnimation.runRight();
 
 	controller = GetComponent(CharacterController);
 	tr = transform;
@@ -324,6 +324,10 @@ function Update() {
 
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
+	
+	if (inputMoveDirection.x < 0) characterAnimation.runLeft();
+	else if (inputMoveDirection.x > 0) characterAnimation.runRight();
+	else characterAnimation.stand();
 	
 	var desiredVelocity : Vector2;
 	if (grounded && TooSteep()) {

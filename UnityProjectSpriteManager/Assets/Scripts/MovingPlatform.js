@@ -9,7 +9,7 @@ function Start () {
 	
 }
 
-function Update () {
+function FixedUpdate () {
 	if (temp >= time) temp = -time;
 	temp++;
 	
