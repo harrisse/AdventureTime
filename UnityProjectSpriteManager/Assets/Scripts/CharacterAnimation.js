@@ -117,8 +117,8 @@ class WormAnimations extends Animations {
 		super();
 		runRight.SetAnim(runRight.BuildUVAnim(new Vector2(.5,1), size,1,1,1,7));
 		runLeft.SetAnim(runLeft.BuildUVAnim(new Vector2(0,1), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(new Vector2(.5,.1), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(new Vector2(0,.1), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(new Vector2(.5,1), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(new Vector2(0,1), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
