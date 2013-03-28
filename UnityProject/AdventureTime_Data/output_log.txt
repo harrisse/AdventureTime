@@ -1,4 +1,4 @@
-Initialize engine version: 4.0.1f2
+Initialize engine version: 4.1.2f1 (911c7369eeac)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.1407]
