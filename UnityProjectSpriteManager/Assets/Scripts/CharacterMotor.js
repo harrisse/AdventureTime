@@ -164,7 +164,8 @@ var groundNormal : Vector2 = Vector2.zero;
 
 private var lastGroundNormal : Vector2 = Vector2.zero;
 private var tr : Transform;
-private var controller : CharacterController;
+@System.NonSerialized
+var controller : CharacterController;
 
 function Awake() {
 	// CharacterAnimation.init(object, scale, uvStart, uvSize, offset)
