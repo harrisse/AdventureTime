@@ -1,7 +1,7 @@
 private var motor : CharacterMotor;
 private var graphics : UnityEngine.GameObject;
 
-// How far you can fall before dieing.
+// How far you can fall before dying.
 var fallKillHeight : int = -20;
 
 function Awake () {
