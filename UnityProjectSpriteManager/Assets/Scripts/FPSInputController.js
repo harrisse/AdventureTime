@@ -16,8 +16,14 @@ function Update () {
 	if (Input.GetButton("Finn") && motor.characterAnimation.animationType != "Finn") {
 		motor.characterAnimation.animationType = "Finn";
 		motor.characterAnimation.loadAnimationSet();
-	} else if (Input.GetButton("Jake") && motor.characterAnimation.animationType != "Worm") {
-		motor.characterAnimation.animationType = "Worm";
+	} else if (Input.GetButton("Jake") && motor.characterAnimation.animationType != "Jake") {
+		motor.characterAnimation.animationType = "Jake";
+		motor.characterAnimation.loadAnimationSet();
+	} else if (Input.GetButton("LSP") && motor.characterAnimation.animationType != "LSP") {
+		motor.characterAnimation.animationType = "LSP";
+		motor.characterAnimation.loadAnimationSet();
+	} else if (Input.GetButton("PB") && motor.characterAnimation.animationType != "PB") {
+		motor.characterAnimation.animationType = "PB";
 		motor.characterAnimation.loadAnimationSet();
 	}
 	
