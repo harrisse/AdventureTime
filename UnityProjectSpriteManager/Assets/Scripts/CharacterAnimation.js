@@ -1,17 +1,32 @@
 #pragma strict
 
 var spriteManager : LinkedSpriteManager;
-var sprite : Sprite;
 var animationType : String;
-var lastDirection : String;
+private var uvWidth : float;
+private var uvHeight : float;
+private var sprite : Sprite;
+private var lastDirection : String;
+private var characterObject : GameObject;
 
-function init(characterObject : GameObject) {
+function init(charObject : GameObject) {
+	characterObject = charObject;
+
+	var t : Texture;
+	t = spriteManager.material.GetTexture("_MainTex");
+	uvWidth = 64f / t.width;
+	uvHeight = 64f / t.height;
+
 	lastDirection = "standStill";
 	
+	loadAnimationSet();
+}
+
+function loadAnimationSet() {
 	var animationSet : Animations;
-	if (animationType == "Finn") animationSet = new FinnAnimations();
-	else animationSet = new WormAnimations();
-	
+	if (animationType == "Finn") animationSet = new FinnAnimations(uvWidth, uvHeight);
+	else animationSet = new WormAnimations(uvWidth, uvHeight);
+
+	if (sprite != null) spriteManager.RemoveSprite(sprite);
 	sprite = spriteManager.AddSprite(characterObject, animationSet.scale, animationSet.scale, animationSet.start, animationSet.size, animationSet.offset, false);
 	
 	sprite.AddAnimation(animationSet.runRight);
@@ -20,6 +35,7 @@ function init(characterObject : GameObject) {
 	sprite.AddAnimation(animationSet.jumpLeft);
 	sprite.AddAnimation(animationSet.standRight);
 	sprite.AddAnimation(animationSet.standLeft);
+	lastDirection = "";
 }
 
 function runRight() {
@@ -73,8 +89,10 @@ class Animations {
 	var jumpLeft : UVAnimation;
 	var standRight : UVAnimation;
 	var standLeft : UVAnimation;
+	private var uvWidth : float;
+	private var uvHeight : float;
 	
-	function Animations() {
+	function Animations(width : float, height : float) {
 		runRight = new UVAnimation();
 		runLeft = new UVAnimation();
 		jumpRight = new UVAnimation();
@@ -88,17 +106,23 @@ class Animations {
 		standRight.name="standRight";
 		standLeft.name="standLeft";
 		scale = 4;
-		size = new Vector2(.5, .25);
+		uvWidth = width;
+		uvHeight = height;
+		size = new Vector2(width, height);
+	}
+	
+	function getUV(x : float, y : float) {
+		return new Vector2(x * uvWidth, (y + 1) * uvHeight);
 	}
 }
 
 class FinnAnimations extends Animations {
-	function FinnAnimations() {
-		super();
-		runRight.SetAnim(runRight.BuildUVAnim(new Vector2(.5,.75), size,1,3,3,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(new Vector2(0,.75), size,1,3,3,7));
-		standRight.SetAnim(standRight.BuildUVAnim(new Vector2(.5,.75), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(new Vector2(0,.75), size,1,1,1,7));
+	function FinnAnimations(width : float, height : float) {
+		super(width, height);
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(8, 2), size, 1, 3, 3, 7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size, 1, 3, 3, 7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(8, 3), size, 1, 1, 1, 7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 3), size, 1, 1, 1, 7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
@@ -107,18 +131,18 @@ class FinnAnimations extends Animations {
 		runLeft.loopReverse = true;
 		standRight.loopReverse = false;
 		standLeft.loopReverse = false;
-		start = new Vector2(0, .25);
+		start = getUV(0, 0);
 		offset = new Vector3(0,.74,0);
 	}
 }
 
 class WormAnimations extends Animations {
-	function WormAnimations() {
-		super();
-		runRight.SetAnim(runRight.BuildUVAnim(new Vector2(.5,1), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(new Vector2(0,1), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(new Vector2(.5,1), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(new Vector2(0,1), size,1,1,1,7));
+	function WormAnimations(width : float, height : float) {
+		super(width, height);
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
@@ -131,3 +155,4 @@ class WormAnimations extends Animations {
 		offset = new Vector3(0,1.3, 0);
 	}
 }
+

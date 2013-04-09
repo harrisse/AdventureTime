@@ -171,7 +171,7 @@ function Awake() {
 	// CharacterAnimation.init(object, scale, uvStart, uvSize, offset)
 	characterAnimation = GetComponent(CharacterAnimation);
 	characterAnimation.init(gameObject);
-	characterAnimation.runRight();
+	characterAnimation.stand();
 
 	controller = GetComponent(CharacterController);
 	tr = transform;

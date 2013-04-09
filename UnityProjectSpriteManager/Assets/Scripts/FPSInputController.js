@@ -13,6 +13,13 @@ function Update () {
 	var direction = Input.GetAxis("Horizontal");
 	motor.inputMoveDirection = new Vector2(direction, 0);
 	motor.inputJump = Input.GetButton("Jump");
+	if (Input.GetButton("Finn") && motor.characterAnimation.animationType != "Finn") {
+		motor.characterAnimation.animationType = "Finn";
+		motor.characterAnimation.loadAnimationSet();
+	} else if (Input.GetButton("Jake") && motor.characterAnimation.animationType != "Worm") {
+		motor.characterAnimation.animationType = "Worm";
+		motor.characterAnimation.loadAnimationSet();
+	}
 	
 	if (motor.controller.transform.position.y < fallKillHeight) Application.LoadLevel(Application.loadedLevel);
 }
