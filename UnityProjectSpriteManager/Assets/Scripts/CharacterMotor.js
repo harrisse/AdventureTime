@@ -452,9 +452,10 @@ function OnControllerColliderHit (hit : ControllerColliderHit) {
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector2.zero;
 	}
-	if (hit.gameObject.tag == "Player") {
+	//for some reason this code wasnt working so im commenting for now
+	/*if (hit.gameObject.tag == "Player") {
 		hit.gameObject.GetComponent(FPSInputController).takeDamage();
-	}
+	}*/
 }
 
 private function SubtractNewPlatformVelocity () {
