@@ -189,7 +189,7 @@ private function UpdateFunction() {
 	if (MoveWithPlatform()) {
 		var newGlobalPoint : Vector2 = movingPlatform.activePlatform.TransformPoint(movingPlatform.activeLocalPoint);
 		moveDistance = (newGlobalPoint - movingPlatform.activeGlobalPoint);
-		if (moveDistance != Vector2.zero) controller.Move(moveDistance);
+		controller.Move(moveDistance);
 		
 		// Support moving platform rotation as well:
         var newGlobalRotation : Quaternion = movingPlatform.activePlatform.rotation * movingPlatform.activeLocalRotation;
@@ -452,10 +452,10 @@ function OnControllerColliderHit (hit : ControllerColliderHit) {
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector2.zero;
 	}
-	//for some reason this code wasnt working so im commenting for now
-	/*if (hit.gameObject.tag == "Player") {
+	
+	if (hit.gameObject.tag == "Player") {
 		hit.gameObject.GetComponent(FPSInputController).takeDamage();
-	}*/
+	}
 }
 
 private function SubtractNewPlatformVelocity () {

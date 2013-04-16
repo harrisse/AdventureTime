@@ -23,5 +23,10 @@ function FixedUpdate () {
 	if (temp > time / Time.fixedDeltaTime) motor.inputMoveDirection = -Vector2.right;
 	else motor.inputMoveDirection = Vector2.right;
 }
+// Turn around when we hit a wall in front of us.
+function OnControllerColliderHit(hit : ControllerColliderHit) {
+	if (hit.normal == Vector3.right) temp = 0;
+	else if (hit.normal == -Vector3.right) temp = time / Time.fixedDeltaTime;
+}
 
 @script RequireComponent (CharacterMotor)
