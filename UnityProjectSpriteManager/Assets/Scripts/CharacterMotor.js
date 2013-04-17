@@ -453,8 +453,19 @@ function OnControllerColliderHit (hit : ControllerColliderHit) {
 		movement.frameVelocity = Vector2.zero;
 	}
 	
-	if (hit.gameObject.tag == "Player") {
-		hit.gameObject.GetComponent(FPSInputController).takeDamage();
+	
+	if (hit.gameObject.tag == "Player") 
+	{
+		if ((hit.normal.x > 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "runRight") ||
+			(hit.normal.x < 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "runLeft"))
+		{
+			characterAnimation.spriteManager.RemoveSprite(characterAnimation.sprite);
+			Destroy(gameObject);//Application.LoadLevel(Application.loadedLevel);
+		}
+		else
+		{
+			hit.gameObject.GetComponent(FPSInputController).takeDamage();
+		}
 	}
 }
 

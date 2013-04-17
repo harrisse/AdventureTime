@@ -4,7 +4,8 @@ var spriteManager : LinkedSpriteManager;
 var animationType : String;
 private var uvWidth : float;
 private var uvHeight : float;
-private var sprite : Sprite;
+@System.NonSerialized
+var sprite : Sprite;
 private var lastDirection : String;
 private var characterObject : GameObject;
 
