@@ -28,6 +28,7 @@ function Update () {
 	var direction = Input.GetAxis("Horizontal");
 	motor.inputMoveDirection = new Vector2(direction, 0);
 	motor.inputJump = Input.GetButton("Jump");
+	motor.inputAction = Input.GetButton("Action");
 	if (Input.GetButton("Finn") && motor.characterAnimation.animationType != "Finn") {
 		motor.characterAnimation.animationType = "Finn";
 		motor.characterAnimation.loadAnimationSet();

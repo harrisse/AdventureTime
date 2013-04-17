@@ -39,6 +39,8 @@ function loadAnimationSet() {
 	sprite.AddAnimation(animationSet.jumpLeft);
 	sprite.AddAnimation(animationSet.standRight);
 	sprite.AddAnimation(animationSet.standLeft);
+	sprite.AddAnimation(animationSet.actionRight);
+	sprite.AddAnimation(animationSet.actionLeft);
 	lastDirection = "";
 }
 
@@ -72,12 +74,28 @@ function jumpLeft() {
 
 function stand() {
 	if (lastDirection != "standLeft" && lastDirection != "standRight") {
-		if (lastDirection == "runRight" || lastDirection == "jumpRight") {
+		if (lastDirection == "runRight" || lastDirection == "jumpRight" || lastDirection == "actionRight") {
 			sprite.PlayAnim("standRight");
 			lastDirection = "standRight";
 		} else {
 			sprite.PlayAnim("standLeft");
 			lastDirection = "standLeft";
+		}
+	}
+}
+
+function action() {
+	Debug.Log("1");
+	if (lastDirection != "actionLeft" && lastDirection != "actionRight") {
+		Debug.Log("2");
+		if (lastDirection == "runRight" || lastDirection == "jumpRight" || lastDirection == "standRight") {
+			Debug.Log("3");
+			sprite.PlayAnim("actionRight");
+			lastDirection = "actionRight";
+		} else {
+			Debug.Log("4");
+			sprite.PlayAnim("actionLeft");
+			lastDirection = "actionLeft";
 		}
 	}
 }
@@ -92,6 +110,8 @@ class Animations {
 	var jumpLeft : UVAnimation;
 	var standRight : UVAnimation;
 	var standLeft : UVAnimation;
+	var actionRight : UVAnimation;
+	var actionLeft : UVAnimation;
 	private var uvWidth : float;
 	private var uvHeight : float;
 	
@@ -102,12 +122,16 @@ class Animations {
 		jumpLeft = new UVAnimation();
 		standRight = new UVAnimation();
 		standLeft = new UVAnimation();
+		actionRight = new UVAnimation();
+		actionLeft = new UVAnimation();
 		runRight.name="runRight";
 		runLeft.name="runLeft";
 		jumpRight.name="jumpRight";
 		jumpLeft.name="jumpLeft";
 		standRight.name="standRight";
 		standLeft.name="standLeft";
+		actionRight.name="actionRight";
+		actionLeft.name="actionLeft";
 		scale = 4;
 		uvWidth = width;
 		uvHeight = height;
@@ -126,10 +150,14 @@ class FinnAnimations extends Animations {
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size, 1, 3, 3, 7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(8, 3), size, 1, 1, 1, 7));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 3), size, 1, 1, 1, 7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(9, 3), size, 1, 4, 4, 7));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(6, 3), size, 1, 4, 4, 7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
+		actionRight.loopCycles=1;
+		actionLeft.loopCycles=1;
 		runRight.loopReverse = true;
 		runLeft.loopReverse = true;
 		standRight.loopReverse = false;
@@ -141,14 +169,18 @@ class FinnAnimations extends Animations {
 class JakeAnimations extends Animations {
 	function JakeAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(9, 3), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(6, 3), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(9, 3), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(6, 3), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
+		actionRight.loopCycles=1;
+		actionLeft.loopCycles=1;
 		runRight.loopReverse = false;
 		runLeft.loopReverse = false;
 		standRight.loopReverse = false;
@@ -160,14 +192,18 @@ class JakeAnimations extends Animations {
 class LSPAnimations extends Animations {
 	function LSPAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(11, 3), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(4, 3), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(11, 3), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(4, 3), size,1,1,1,7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
+		actionRight.loopCycles=1;
+		actionLeft.loopCycles=1;
 		runRight.loopReverse = false;
 		runLeft.loopReverse = false;
 		standRight.loopReverse = false;
@@ -179,14 +215,18 @@ class LSPAnimations extends Animations {
 class PBAnimations extends Animations {
 	function PBAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(11, 3), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(4, 3), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(11, 3), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(4, 3), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
+		actionRight.loopCycles=1;
+		actionLeft.loopCycles=1;
 		runRight.loopReverse = false;
 		runLeft.loopReverse = false;
 		standRight.loopReverse = false;
@@ -198,14 +238,18 @@ class PBAnimations extends Animations {
 class WormAnimations extends Animations {
 	function WormAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(12, 3), size,1,1,1,7));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(13, 3), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(2, 3), size,1,1,1,7));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(13, 3), size,1,1,1,7));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(2, 3), size,1,1,1,7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 3), size,1,1,1,7));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 3), size,1,1,1,7));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
+		actionRight.loopCycles=1;
+		actionLeft.loopCycles=1;
 		runRight.loopReverse = false;
 		runLeft.loopReverse = false;
 		standRight.loopReverse = false;

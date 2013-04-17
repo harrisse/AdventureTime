@@ -21,6 +21,7 @@ var inputMoveDirection : Vector3 = Vector3.zero;
 // for the jump button directly so this script can also be used by AIs.
 @System.NonSerialized
 var inputJump : boolean = false;
+var inputAction : boolean = false;
 
 class CharacterMotorMovement {
 	// The maximum horizontal speed when moving
@@ -326,7 +327,8 @@ function Update() {
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
 	
-	if (inputMoveDirection.x < 0) characterAnimation.runLeft();
+	if (inputAction) characterAnimation.action();
+	else if (inputMoveDirection.x < 0) characterAnimation.runLeft();
 	else if (inputMoveDirection.x > 0) characterAnimation.runRight();
 	else characterAnimation.stand();
 	
