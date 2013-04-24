@@ -6,9 +6,6 @@
 @System.NonSerialized
 var characterAnimation : CharacterAnimation;
 
-// Attack stuff
-var attackRange : float = 1;
-
 // Does this script currently respond to input?
 var canControl : boolean = true;
 var useFixedUpdate : boolean = true;
@@ -321,14 +318,16 @@ function FixedUpdate() {
 		}
 	}
 	
+	var currentAnim : String = gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name;
 	// If we're Finn and performing an action, kill any enemies in range
 	if (characterAnimation.animationType == "Finn") {
+		var attackRange : float = 1;
 		var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		var xDiff : float;
 		var yDiff : float;
 		var enemyMotor : CharacterMotor;
 		// If we're moving right
-		if (gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionRight") {
+		if (currentAnim == "actionRight") {
 			// Iterate through enemies
 			for (var enemy : GameObject in enemies) {
 				enemyMotor = enemy.GetComponent(CharacterMotor);
@@ -341,7 +340,7 @@ function FixedUpdate() {
 				}
 			}
 		// If we're moving left
-		} else if (gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionLeft") {
+		} else if (currentAnim == "actionLeft") {
 			for (var enemy : GameObject in enemies) {
 				enemyMotor = enemy.GetComponent(CharacterMotor);
 				xDiff = gameObject.transform.position.x - enemy.transform.position.x;
