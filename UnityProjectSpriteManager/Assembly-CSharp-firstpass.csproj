@@ -47,6 +47,7 @@
      <Compile Include="Assets\Plugins\LinkedSpriteManager.cs" />
      <Compile Include="Assets\Plugins\Sprite.cs" />
      <Compile Include="Assets\Plugins\SpriteManager.cs" />
+     <None Include="Assets\GameDialog\Dialog0.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

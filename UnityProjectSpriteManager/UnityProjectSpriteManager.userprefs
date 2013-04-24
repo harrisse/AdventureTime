@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterAnimation.js">
+    <Files>
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="41" Column="48" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="371" Column="36" />
+      <File FileName="Assets\Scripts\CharacterAnimation.js" Line="89" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

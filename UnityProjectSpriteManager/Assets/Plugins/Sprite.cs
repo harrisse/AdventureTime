@@ -66,7 +66,7 @@ public class Sprite
 	public delegate void AnimCompleteDelegate();		// Definition of delegate to be called upon animation completion
  
 	protected ArrayList animations = new ArrayList();	// Array of available animations
-	protected UVAnimation curAnim = null;				// The current animation
+	public UVAnimation curAnim = null;				// The current animation
 	protected AnimCompleteDelegate animCompleteDelegate = null;	// Delegate to be called upon animation completion
 	protected float timeSinceLastFrame = 0;				// The total time since our last animation frame change
 	protected float timeBetweenAnimFrames;				// The amount of time we want to pass before moving to the next frame of animation

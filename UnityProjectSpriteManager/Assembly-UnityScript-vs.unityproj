@@ -48,8 +48,11 @@
      <Compile Include="Assets\Scripts\CharacterAnimation.js" />
      <Compile Include="Assets\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Scripts\JSONUtils.js" />
      <Compile Include="Assets\Scripts\MovingPlatform.js" />
      <Compile Include="Assets\Scripts\TrackingInputController.js" />
+     <Compile Include="Assets\Scripts\jsonGuiText.js" />
+     <None Include="Assets\GameDialog\Dialog0.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

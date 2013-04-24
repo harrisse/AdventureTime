@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Sprites\FinnTestStabbing.cs" />
      <Compile Include="Assets\Scripts\Sprites\FinnTestWalking.cs" />
+     <None Include="Assets\GameDialog\Dialog0.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

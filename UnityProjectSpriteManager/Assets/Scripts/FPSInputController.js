@@ -28,7 +28,8 @@ function Update () {
 	var direction = Input.GetAxis("Horizontal");
 	motor.inputMoveDirection = new Vector2(direction, 0);
 	motor.inputJump = Input.GetButton("Jump");
-	if (Input.GetButton("Finn") && motor.characterAnimation.animationType != "Finn") {
+	motor.inputAction = Input.GetButton("Action");
+	if (getCharacterButton("Finn")) {
 		motor.characterAnimation.animationType = "Finn";
 		motor.characterAnimation.loadAnimationSet();
 		controller.height = 2.5;
@@ -36,7 +37,7 @@ function Update () {
 		controller.center.y = 0;
 		characterCollider.center.y = 0;
 		nameText.text = "FINN THE HUMAN";
-	} else if (Input.GetButton("Jake") && motor.characterAnimation.animationType != "Jake") {
+	} else if (getCharacterButton("Jake")) {
 		motor.characterAnimation.animationType = "Jake";
 		motor.characterAnimation.loadAnimationSet();
 		controller.height = 1.7;
@@ -44,17 +45,42 @@ function Update () {
 		controller.center.y = -.4;
 		characterCollider.center.y = -.4;
 		nameText.text = "JAKE THE DOG";
-	} else if (Input.GetButton("PB") && motor.characterAnimation.animationType != "PB") {
+	} else if (Input.GetButton("Action") && motor.characterAnimation.animationType == "Jake") {
+		motor.characterAnimation.animationType = "SmallJake";
+		motor.characterAnimation.loadAnimationSet();
+		controller.height = .85;
+		characterCollider.height = .85;
+		controller.center.y = -.65;
+		characterCollider.center.y = -.65;
+		nameText.text = "JAKE THE DOG";
+	} else if (!Input.GetButton("Action") && motor.characterAnimation.animationType == "SmallJake") {
+		motor.characterAnimation.animationType = "Jake";
+		motor.characterAnimation.loadAnimationSet();
+		controller.height = 1.7;
+		characterCollider.height = 1.7;
+		controller.center.y = -.4;
+		characterCollider.center.y = -.4;
+		nameText.text = "JAKE THE DOG";
+	} else if (getCharacterButton("PB")) {
 		motor.characterAnimation.animationType = "PB";
 		motor.characterAnimation.loadAnimationSet();
 		nameText.text = "PRINCESS BUBBLEGUM";
-	} else if (Input.GetButton("LSP") && motor.characterAnimation.animationType != "LSP") {
+	} else if (getCharacterButton("LSP")) {
 		motor.characterAnimation.animationType = "LSP";
 		motor.characterAnimation.loadAnimationSet();
 		nameText.text = "LUMPY SPACE PRINCESS";
 	}
 	
 	if (motor.controller.transform.position.y < fallKillHeight) Application.LoadLevel(Application.loadedLevel);
+}
+
+function getCharacterButton(character : String) : boolean {
+	var ret : boolean = Input.GetButton(character) && motor.characterAnimation.animationType != character;
+	var characters = new Array("Finn", "Jake", "PB", "LSP");
+	for (var otherCharacter : String in characters) {
+		if (otherCharacter != character) ret &= !Input.GetButton(otherCharacter);
+	}
+	return ret;
 }
 
 function takeDamage() {
