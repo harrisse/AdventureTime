@@ -1,96 +1,78 @@
-public var asset:TextAsset;
+public var dialogFile:TextAsset;
 
-
+private var distanceToActivate : float = .5;
 private var jsonText;
-private var index;
+private var index = 0;
 private var stopIndex;
+private var canIndex = true;
+private var player : UnityEngine.GameObject;
+private var hasLoaded = false;
+private var isRunning = false;
+private var hasRun = false;
 
 function Awake()
 {
-	jsonText = JSONUtils.ParseJSON(asset.text);
-	index = 0;
-	gameObject.GetComponent(GUIText).guiText.pixelOffset.x = .5 * Screen.width;
-	gameObject.GetComponent(GUIText).guiText.pixelOffset.y = .6 * Screen.height;
-	stopIndex = jsonText.Keys.Count;
+	player = GameObject.FindGameObjectWithTag("Player");
 }
  
 function OnGUI()
 {
-	if (index < stopIndex+1)
+	if (!hasRun && !isRunning && Mathf.Abs(player.transform.position.x - gameObject.transform.position.x) < distanceToActivate)
 	{
-		//textBefore = GUI.TextField( Rect( 0, 0, Screen.width, 0.45 * Screen.height ), textBefore );
-		if( GUI.Button( Rect( .45 * Screen.width, 0.45 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), "Next" ) )
+		isRunning = true;
+		player.GetComponent(CharacterMotor).canControl = false;
+		//Time.timeScale = 0;
+	}
+	if (isRunning)
+	{
+		if (!hasLoaded)
 		{
-			if (index < stopIndex)
+			jsonText = JSONUtils.ParseJSON(dialogFile.text);
+			stopIndex = jsonText.Keys.Count;
+			hasLoaded = true;
+		}
+		if (index < stopIndex)
+		{
+			
+			var text : String = "";
+			
+			
+			face = jsonText[index.ToString()]["face"];
+			text = jsonText[index.ToString()]["text"]+"...(Press Space)";
+			//if( GUI.Button( Rect( .45 * Screen.width, 0.45 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), "Next" ) )
+			if (canIndex && Input.GetKeyUp(KeyCode.Space))
 			{
-				gameObject.GetComponent(GUIText).guiText.text = jsonText[index.ToString()].ToString();
+				index++;
+				canIndex = false;
+				//var temp:Hashtable = JSONUtils.ParseJSON( textBefore );
+				//Debug.Log( "Keys : " + temp.Keys.Count );
+				//textAfter = JSONUtils.HashtableToJSON( temp );
 			}
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				canIndex = true;
+			}
+			/*if (index < stopIndex)
+			{*/
+			
+			/*}
 			else
 			{
-				gameObject.GetComponent(GUIText).guiText.text = "";
-			}
-			index++;
-			//var temp:Hashtable = JSONUtils.ParseJSON( textBefore );
-			//Debug.Log( "Keys : " + temp.Keys.Count );
-			//textAfter = JSONUtils.HashtableToJSON( temp );
+				text = "";
+			}*/
+			//textBefore = GUI.TextField( Rect( 0, 0, Screen.width, 0.45 * Screen.height ), text);
+			//GUI.Label(Rect( .45 * Screen.width, 0.80 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), text);
+			//GUI.Label(Rect( .4 * Screen.width, 0.80 * Screen.height, 0.05 * Screen.width, 0.1 * Screen.height ), Resources.Load(face) as Texture2D);
+			GUI.Label(Rect( .3 * Screen.width, 0.90 * Screen.height, 0.5 * Screen.width, 0.1 * Screen.height ), text);
+			GUI.DrawTexture(Rect( .1 * Screen.width, 0.80 * Screen.height, 64, 64 ), Resources.Load(face) as Texture2D, ScaleMode.StretchToFill, true, 0);
+			//GUI.Label(Rect( .45 * Screen.width, 0.90 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), index.ToString());
+		}
+		else
+		{
+			player.GetComponent(CharacterMotor).canControl = true;
+			Time.timeScale = 1.0;
+			isRunning = false;
+			hasRun = true;
 		}
 	}
-}
- 
-function SerializeObject()
-{
-	var object = {
-		"sequence" : [
-			{
-				"parallel" : [
-					{
-						"functionType" : "iTween",
-						"functionName" : "MoveFrom",
-						"functionParameters" : {
-								"y" : 5.0,
-								"easeType" : "easeInCubic",
-								"isLocal" : true,
-								"time" : 1.0,
-								"delay" : 0.0
-							}
-						},
-					{
-						"functionType" : "self",
-						"functionName" : "SendMessageUpwards",
-						"functionParameters" : {
-							"message" : "WaitAndDust",
-							"delay" : 0.0
-							}
-						},
-					{
-						"functionType" : "self",
-						"functionName" : "PlayAnimation",
-						"functionParameters" : {
-							"animationName" : "Fall",
-							"ownerTag" : "ROBOT",
-							"waitTime" : 1.0,
-							"delay" : 0.8
-							}
-						}
-					]
-				},
-			{
-				"functionType" : "self",
-				"functionName" : "PlayAnimation",
-				"functionParameters" : {
-					"animationName" : "Spin",
-					"ownerTag" : "ROBOT",
-					"waitTime" : 2.0,
-					"delay" : 0.0
-					}
-				}
-		]
-	};
-	Debug.Log( "object : "+object );
-	Debug.Log( "keys : "+object.Keys );
-	for( var test in object.Keys )
-	{
-		Debug.Log( "Object["+test+"] : "+object[test] );
-	}
-	textAfter = JSONUtils.ObjectToJSON( object );
 }
