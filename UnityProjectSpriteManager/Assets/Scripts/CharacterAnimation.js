@@ -85,15 +85,11 @@ function stand() {
 }
 
 function action() {
-	Debug.Log("1");
 	if (lastDirection != "actionLeft" && lastDirection != "actionRight") {
-		Debug.Log("2");
 		if (lastDirection == "runRight" || lastDirection == "jumpRight" || lastDirection == "standRight") {
-			Debug.Log("3");
 			sprite.PlayAnim("actionRight");
 			lastDirection = "actionRight";
 		} else {
-			Debug.Log("4");
 			sprite.PlayAnim("actionLeft");
 			lastDirection = "actionLeft";
 		}
@@ -150,16 +146,18 @@ class FinnAnimations extends Animations {
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size, 1, 3, 3, 7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(8, 3), size, 1, 1, 1, 7));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 3), size, 1, 1, 1, 7));
-		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(9, 3), size, 1, 4, 4, 7));
-		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(6, 3), size, 1, 4, 4, 7));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(9, 3), size, 1, 4, 4, 14));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(6, 3), size, 1, 4, 4, 14));
 		runRight.loopCycles=-1;
 		runLeft.loopCycles=-1;
 		standRight.loopCycles=-1;
 		standLeft.loopCycles=-1;
-		actionRight.loopCycles=1;
-		actionLeft.loopCycles=1;
+		actionRight.loopCycles=-1;
+		actionLeft.loopCycles=-1;
 		runRight.loopReverse = true;
 		runLeft.loopReverse = true;
+		actionRight.loopReverse = false;
+		actionLeft.loopReverse = false;
 		standRight.loopReverse = false;
 		standLeft.loopReverse = false;
 		offset = new Vector3(0,.74,0);

@@ -458,8 +458,8 @@ function OnControllerColliderHit (hit : ControllerColliderHit) {
 	
 	if (hit.gameObject.tag == "Player") 
 	{
-		if ((hit.normal.x > 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "runRight") ||
-			(hit.normal.x < 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "runLeft"))
+		if ((hit.normal.x > 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionRight") ||
+			(hit.normal.x < 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionLeft"))
 		{
 			characterAnimation.spriteManager.RemoveSprite(characterAnimation.sprite);
 			Destroy(gameObject);//Application.LoadLevel(Application.loadedLevel);
