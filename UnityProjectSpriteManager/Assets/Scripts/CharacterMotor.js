@@ -365,8 +365,11 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 	if (!canControl) inputMoveDirection = Vector2.zero;
 	
 	// Perform the correct animation
-	if (inputAction) characterAnimation.action();
-	else if (inputMoveDirection.x < 0) characterAnimation.runLeft();
+	if (inputAction) {
+		if (inputMoveDirection.x < 0) characterAnimation.actionLeft();
+		else if (inputMoveDirection.x > 0) characterAnimation.actionRight();
+		else characterAnimation.action();
+	} else if (inputMoveDirection.x < 0) characterAnimation.runLeft();
 	else if (inputMoveDirection.x > 0) characterAnimation.runRight();
 	else characterAnimation.stand();
 	

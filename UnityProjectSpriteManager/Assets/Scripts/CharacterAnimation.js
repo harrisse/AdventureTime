@@ -85,14 +85,21 @@ function stand() {
 }
 
 function action() {
-	if (lastDirection != "actionLeft" && lastDirection != "actionRight") {
-		if (lastDirection == "runRight" || lastDirection == "jumpRight" || lastDirection == "standRight") {
-			sprite.PlayAnim("actionRight");
-			lastDirection = "actionRight";
-		} else {
-			sprite.PlayAnim("actionLeft");
-			lastDirection = "actionLeft";
-		}
+	if (lastDirection == "runRight" || lastDirection == "jumpRight" || lastDirection == "actionRight") actionRight();
+	else actionLeft();
+}
+
+function actionRight() {
+	if (lastDirection != "actionRight") {
+		sprite.PlayAnim("actionRight");
+		lastDirection = "actionRight";
+	}
+}
+
+function actionLeft() {
+	if (lastDirection != "actionLeft") {
+		sprite.PlayAnim("actionLeft");
+		lastDirection = "actionLeft";
 	}
 }
 
@@ -146,6 +153,8 @@ class FinnAnimations extends Animations {
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size, 1, 3, 3, 7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(8, 3), size, 1, 1, 1, 7));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 3), size, 1, 1, 1, 7));
+		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(8, 3), size, 1, 1, 1, 7));
+		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 3), size, 1, 1, 1, 7));
 		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(9, 3), size, 1, 4, 4, 14));
 		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(6, 3), size, 1, 4, 4, 14));
 		runRight.loopCycles=-1;
