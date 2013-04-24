@@ -170,7 +170,6 @@ private var tr : Transform;
 var controller : CharacterController;
 
 function Awake() {
-	// CharacterAnimation.init(object, scale, uvStart, uvSize, offset)
 	characterAnimation = GetComponent(CharacterAnimation);
 	characterAnimation.init(gameObject);
 	characterAnimation.stand();
