@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\FPSInputController.js" />
      <Compile Include="Assets\Scripts\JSONUtils.js" />
      <Compile Include="Assets\Scripts\MovingPlatform.js" />
+     <Compile Include="Assets\Scripts\Standing.js" />
      <Compile Include="Assets\Scripts\TrackingInputController.js" />
      <Compile Include="Assets\Scripts\jsonGuiText.js" />
      <None Include="Assets\GameDialog\Dialog0.txt" />

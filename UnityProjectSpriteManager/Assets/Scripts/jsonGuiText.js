@@ -61,8 +61,10 @@ function OnGUI()
 				text = "";
 			}*/
 			//textBefore = GUI.TextField( Rect( 0, 0, Screen.width, 0.45 * Screen.height ), text);
-			GUI.Label(Rect( .45 * Screen.width, 0.80 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), text);
-			GUI.Label(Rect( .4 * Screen.width, 0.80 * Screen.height, 0.05 * Screen.width, 0.1 * Screen.height ), Resources.Load(face) as Texture2D);
+			//GUI.Label(Rect( .45 * Screen.width, 0.80 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), text);
+			//GUI.Label(Rect( .4 * Screen.width, 0.80 * Screen.height, 0.05 * Screen.width, 0.1 * Screen.height ), Resources.Load(face) as Texture2D);
+			GUI.Label(Rect( .3 * Screen.width, 0.90 * Screen.height, 0.5 * Screen.width, 0.1 * Screen.height ), text);
+			GUI.DrawTexture(Rect( .1 * Screen.width, 0.80 * Screen.height, 64, 64 ), Resources.Load(face) as Texture2D, ScaleMode.StretchToFill, true, 0);
 			//GUI.Label(Rect( .45 * Screen.width, 0.90 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), index.ToString());
 		}
 		else
