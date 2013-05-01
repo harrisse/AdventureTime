@@ -1,1 +1,4 @@
-{"0":"And so begins our fight in this small town","1":"Our little hero, Finn, is looking for some fun","2":"Some more text that sounds really cool","3":"The final string"}
+{"0":{"text":"What are you up to over here Finn?","face":"JakeFace"},
+"1":{"text":"Aw nothing. Well, I was trying to summon an Astral Beast with my mind, but it didn’t work. I suck man.","face":"AttemptSurprise"},
+"2":{"text":"I always say that sucking is the first thing to being kind of good at something.","face":"JakeHappy"},
+"3":{"text":"You always know just what to say bro.","face":"AttemptEmbarassed"}}

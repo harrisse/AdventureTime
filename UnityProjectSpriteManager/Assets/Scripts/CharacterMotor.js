@@ -170,7 +170,6 @@ private var tr : Transform;
 var controller : CharacterController;
 
 function Awake() {
-	// CharacterAnimation.init(object, scale, uvStart, uvSize, offset)
 	characterAnimation = GetComponent(CharacterAnimation);
 	characterAnimation.init(gameObject);
 	characterAnimation.stand();
@@ -222,6 +221,8 @@ private function UpdateFunction() {
 	
    	// Move our character!
 	movement.collisionFlags = controller.Move (currentMovementOffset);
+	// Lock our controller in the z dimension
+	controller.transform.position.z = 0;
 	
 	movement.lastHitPoint = movement.hitPoint;
 	lastGroundNormal = groundNormal;
@@ -317,6 +318,8 @@ function FixedUpdate() {
 			movingPlatform.platformVelocity = Vector2.zero;	
 		}
 	}
+	if (scienceDelay > 0)
+		scienceDelay--;
 	
 	var currentAnim : String = gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name;
 	// If we're Finn and performing an action, kill any enemies in range
@@ -335,8 +338,7 @@ function FixedUpdate() {
 				yDiff = Mathf.Abs(enemy.transform.position.y - gameObject.transform.position.y);
 				// Destroy enemy if in range
 				if (xDiff >= 0 && xDiff <= attackRange + enemyMotor.controller.radius + controller.radius && yDiff <= controller.height / 2 + enemyMotor.controller.height / 2) {
-					characterAnimation.spriteManager.RemoveSprite(enemyMotor.characterAnimation.sprite);
-					Destroy(enemy);
+					enemyMotor.takeDamage();
 				}
 			}
 		// If we're moving left
@@ -346,8 +348,7 @@ function FixedUpdate() {
 				xDiff = gameObject.transform.position.x - enemy.transform.position.x;
 				yDiff = Mathf.Abs(enemy.transform.position.y - gameObject.transform.position.y);
 				if (xDiff >= 0 && xDiff <= attackRange + enemyMotor.controller.radius + controller.radius && yDiff <= controller.height / 2 + enemyMotor.controller.height / 2) {
-					characterAnimation.spriteManager.RemoveSprite(enemyMotor.characterAnimation.sprite);
-					Destroy(enemy);
+					enemyMotor.takeDamage();
 				}
 			}
 		}
@@ -356,18 +357,58 @@ function FixedUpdate() {
 	if (useFixedUpdate) UpdateFunction();
 }
 
+function takeDamage() {
+	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
+	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
+}
+
 function Update() {
 	if (!useFixedUpdate) UpdateFunction();
 }
 
+public var spells: Transform;
+public var science : scienceTransform;
+private var scienceDelay : int = 0;
+
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
-	
+	var object : scienceTransform;
 	// Perform the correct animation
 	if (inputAction) {
-		if (inputMoveDirection.x < 0) characterAnimation.actionLeft();
-		else if (inputMoveDirection.x > 0) characterAnimation.actionRight();
-		else characterAnimation.action();
+		if (inputMoveDirection.x < 0){
+			characterAnimation.actionLeft();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
+				object.goLeft = true;
+				scienceDelay = 10;
+			}
+		}
+		else if (inputMoveDirection.x > 0){
+			characterAnimation.actionRight();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
+				object.goLeft = false;
+				scienceDelay = 10;
+			}
+		}
+		else {
+			characterAnimation.action();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				scienceDelay = 10;
+				if (characterAnimation.facingRight())
+				{
+					object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
+					object.goLeft = false;
+				}
+				else
+				{
+					object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
+					object.goLeft = true;
+				}
+			}
+		}
+		
 	} else if (inputMoveDirection.x < 0) characterAnimation.runLeft();
 	else if (inputMoveDirection.x > 0) characterAnimation.runRight();
 	else characterAnimation.stand();
@@ -485,30 +526,15 @@ private function ApplyGravityAndJumping (velocity : Vector2) {
 
 function OnControllerColliderHit (hit : ControllerColliderHit) {
 	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0) {
-		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector2.zero)
-			groundNormal = hit.normal;
-		else
-			groundNormal = lastGroundNormal;
+		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector2.zero) groundNormal = hit.normal;
+		else groundNormal = lastGroundNormal;
 		
 		movingPlatform.hitPlatform = hit.collider.transform;
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector2.zero;
 	}
 	
-	
-	if (hit.gameObject.tag == "Player") 
-	{
-		//if ((hit.normal.x > 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionRight") ||
-		//	(hit.normal.x < 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionLeft"))
-		//{
-		//	characterAnimation.spriteManager.RemoveSprite(characterAnimation.sprite);
-		//	Destroy(gameObject);//Application.LoadLevel(Application.loadedLevel);
-		//}
-		//else
-		//{
-			hit.gameObject.GetComponent(FPSInputController).takeDamage();
-		//}
-	}
+	if (hit.gameObject.tag == "Player") hit.gameObject.GetComponent(FPSInputController).takeDamage();
 }
 
 private function SubtractNewPlatformVelocity () {

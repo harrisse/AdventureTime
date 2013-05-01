@@ -15,8 +15,20 @@ Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSprit
 Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.107 seconds
+- Completed reload, in  0.106 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\Boo.Lang.dll (this message is harmless)
+Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+Platform assembly: C:\Users\Sam\Documents\GitHub\AdventureTime\UnityProjectSpriteManager\AdventureTime_Data\Managed\System.Core.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1001.
+Total: 2.975758 ms (FindLiveObjects: 0.066726 ms CreateObjectMapping: 0.034005 ms MarkObjects: 2.022977 ms  DeleteObjects: 0.054536 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1001.
+Total: 3.356871 ms (FindLiveObjects: 0.066085 ms CreateObjectMapping: 0.031438 ms MarkObjects: 2.447077 ms  DeleteObjects: 0.046195 ms)
+
