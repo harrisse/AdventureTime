@@ -28,10 +28,11 @@ function loadAnimationSet() {
 	else if (animationType == "LSP") animationSet = new LSPAnimations(uvWidth, uvHeight);
 	else if (animationType == "PB") animationSet = new PBAnimations(uvWidth, uvHeight);
 	else if (animationType == "Snail") animationSet = new SnailAnimations(uvWidth, uvHeight);
+	else if (animationType == "Horse") animationSet = new HorseAnimations(uvWidth, uvHeight);
 	else animationSet = new WormAnimations(uvWidth, uvHeight);
 
 	if (sprite != null) spriteManager.RemoveSprite(sprite);
-	sprite = spriteManager.AddSprite(characterObject, animationSet.scale, animationSet.scale, Vector2.zero, animationSet.size, animationSet.offset, false);
+	sprite = spriteManager.AddSprite(characterObject, animationSet.xScale, animationSet.yScale, Vector2.zero, animationSet.size, animationSet.offset, false);
 	
 	sprite.AddAnimation(animationSet.runRight);
 	sprite.AddAnimation(animationSet.runLeft);
@@ -112,7 +113,8 @@ function facingRight() : boolean {
 }
 
 class Animations {
-	var scale : int;
+	var xScale : int;
+	var yScale : int;
 	var size : Vector2;
 	var offset : Vector3;
 	var runRight : UVAnimation;
@@ -150,7 +152,8 @@ class Animations {
 		actionRight.loopCycles=-1;
 		actionLeft.loopCycles=-1;
 		offset = new Vector3(0,.74,0);
-		scale = 4;
+		xScale = 4;
+		yScale = 4;
 		uvWidth = width;
 		uvHeight = height;
 		size = new Vector2(width, height);
@@ -262,5 +265,22 @@ class SnailAnimations extends Animations {
 		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(15, 2), size,1,2,2,3));
 		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(0, 2), size,1,2,2,3));
 		offset = new Vector3(0,1.3, 0);
+	}
+}
+
+class HorseAnimations extends Animations {
+	function HorseAnimations(width : float, height : float) {
+		super(width, height);
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 0), size,1,1,1,3));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size,1,2,2,3));
+		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(14, 0), size, 1, 1, 1, 1));
+		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size, 1, 1, 1, 1));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(0, 2), size,1,1,1,1));
+		offset = new Vector3(0,1.3, 0);
+		size = new Vector2(2 * width, height);
+		xScale = 8;
 	}
 }

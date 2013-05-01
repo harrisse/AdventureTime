@@ -221,6 +221,8 @@ private function UpdateFunction() {
 	
    	// Move our character!
 	movement.collisionFlags = controller.Move (currentMovementOffset);
+	// Lock our controller in the z dimension
+	controller.transform.position.z = 0;
 	
 	movement.lastHitPoint = movement.hitPoint;
 	lastGroundNormal = groundNormal;
@@ -336,8 +338,7 @@ function FixedUpdate() {
 				yDiff = Mathf.Abs(enemy.transform.position.y - gameObject.transform.position.y);
 				// Destroy enemy if in range
 				if (xDiff >= 0 && xDiff <= attackRange + enemyMotor.controller.radius + controller.radius && yDiff <= controller.height / 2 + enemyMotor.controller.height / 2) {
-					characterAnimation.spriteManager.RemoveSprite(enemyMotor.characterAnimation.sprite);
-					Destroy(enemy);
+					enemyMotor.takeDamage();
 				}
 			}
 		// If we're moving left
@@ -347,14 +348,19 @@ function FixedUpdate() {
 				xDiff = gameObject.transform.position.x - enemy.transform.position.x;
 				yDiff = Mathf.Abs(enemy.transform.position.y - gameObject.transform.position.y);
 				if (xDiff >= 0 && xDiff <= attackRange + enemyMotor.controller.radius + controller.radius && yDiff <= controller.height / 2 + enemyMotor.controller.height / 2) {
-					characterAnimation.spriteManager.RemoveSprite(enemyMotor.characterAnimation.sprite);
-					Destroy(enemy);
+					enemyMotor.takeDamage();
 				}
 			}
 		}
 	}
 	
 	if (useFixedUpdate) UpdateFunction();
+}
+
+function takeDamage() {
+	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
+	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
 }
 
 function Update() {
