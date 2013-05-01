@@ -1,8 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterAnimation.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\scienceKiller.js">
     <Files>
-      <File FileName="Assets/Scripts/CharacterAnimation.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterAnimation.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="336" Column="85" />
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="81" Column="48" />
+      <File FileName="Assets\Scripts\scienceTransform.js" Line="7" Column="24" />
+      <File FileName="Assets\Scripts\scienceKiller.js" Line="2" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

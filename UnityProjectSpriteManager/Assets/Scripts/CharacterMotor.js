@@ -316,6 +316,8 @@ function FixedUpdate() {
 			movingPlatform.platformVelocity = Vector2.zero;	
 		}
 	}
+	if (scienceDelay > 0)
+		scienceDelay--;
 	
 	var currentAnim : String = gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name;
 	// If we're Finn and performing an action, kill any enemies in range
@@ -359,14 +361,48 @@ function Update() {
 	if (!useFixedUpdate) UpdateFunction();
 }
 
+public var spells: Transform;
+public var science : scienceTransform;
+private var scienceDelay : int = 0;
+
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
-	
+	var object : scienceTransform;
 	// Perform the correct animation
 	if (inputAction) {
-		if (inputMoveDirection.x < 0) characterAnimation.actionLeft();
-		else if (inputMoveDirection.x > 0) characterAnimation.actionRight();
-		else characterAnimation.action();
+		if (inputMoveDirection.x < 0){
+			characterAnimation.actionLeft();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
+				object.goLeft = true;
+				scienceDelay = 10;
+			}
+		}
+		else if (inputMoveDirection.x > 0){
+			characterAnimation.actionRight();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
+				object.goLeft = false;
+				scienceDelay = 10;
+			}
+		}
+		else {
+			characterAnimation.action();
+			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
+				scienceDelay = 10;
+				if (characterAnimation.facingRight())
+				{
+					object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
+					object.goLeft = false;
+				}
+				else
+				{
+					object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
+					object.goLeft = true;
+				}
+			}
+		}
+		
 	} else if (inputMoveDirection.x < 0) characterAnimation.runLeft();
 	else if (inputMoveDirection.x > 0) characterAnimation.runRight();
 	else characterAnimation.stand();

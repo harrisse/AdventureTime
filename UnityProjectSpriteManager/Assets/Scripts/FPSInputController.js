@@ -78,7 +78,7 @@ function getCharacterButton(character : String) : boolean {
 	var ret : boolean = Input.GetButton(character) && motor.characterAnimation.animationType != character;
 	var characters = new Array("Finn", "Jake", "PB", "LSP");
 	for (var otherCharacter : String in characters) {
-		if (otherCharacter != character) ret &= !Input.GetButton(otherCharacter);
+		if (otherCharacter != character) ret = ret && !Input.GetButton(otherCharacter);
 	}
 	return ret;
 }
