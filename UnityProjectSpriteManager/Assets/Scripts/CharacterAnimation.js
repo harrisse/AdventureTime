@@ -8,6 +8,7 @@ private var uvHeight : float;
 var sprite : Sprite;
 private var lastDirection : String;
 private var characterObject : GameObject;
+private var actionReverse : boolean;
 
 function init(charObject : GameObject) {
 	characterObject = charObject;
@@ -33,6 +34,8 @@ function loadAnimationSet() {
 
 	if (sprite != null) spriteManager.RemoveSprite(sprite);
 	sprite = spriteManager.AddSprite(characterObject, animationSet.xScale, animationSet.yScale, Vector2.zero, animationSet.size, animationSet.offset, false);
+	
+	actionReverse = animationSet.actionReverse;
 	
 	sprite.AddAnimation(animationSet.runRight);
 	sprite.AddAnimation(animationSet.runLeft);
@@ -96,14 +99,16 @@ function action() {
 
 function actionRight() {
 	if (lastDirection != "actionRight") {
-		sprite.PlayAnim("actionRight");
+		if (actionReverse) sprite.PlayAnimInReverse("actionRight");
+		else sprite.PlayAnim("actionRight");
 		lastDirection = "actionRight";
 	}
 }
 
 function actionLeft() {
 	if (lastDirection != "actionLeft") {
-		sprite.PlayAnim("actionLeft");
+		if (actionReverse) sprite.PlayAnimInReverse("actionLeft");
+		else sprite.PlayAnim("actionLeft");
 		lastDirection = "actionLeft";
 	}
 }
@@ -127,6 +132,7 @@ class Animations {
 	var actionLeft : UVAnimation;
 	private var uvWidth : float;
 	private var uvHeight : float;
+	var actionReverse : boolean = false;
 	
 	function Animations(width : float, height : float) {
 		runRight = new UVAnimation();
@@ -191,6 +197,9 @@ class JakeAnimations extends Animations {
 		jumpLeft.SetAnim(jumpLeft.BuildUVAnim(getUV(5, 0), size, 1, 1, 1, 7));
 		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 0), size,1,4,4,7));
 		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 0), size,1,4,4,7));
+		actionRight.loopCycles=0;
+		actionLeft.loopCycles=0;
+		actionReverse = true;
 	}
 }
 
@@ -205,8 +214,8 @@ class SmallJakeAnimations extends Animations {
 		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(5, 3), size, 1, 1, 1, 7));
 		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(10, 0), size,1,4,4,7));
 		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(5, 0), size,1,4,4,7));
-		actionRight.loopCycles=1;
-		actionLeft.loopCycles=1;
+		actionRight.loopCycles=0;
+		actionLeft.loopCycles=0;
 	}
 }
 

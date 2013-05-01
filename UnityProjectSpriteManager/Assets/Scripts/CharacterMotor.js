@@ -526,30 +526,15 @@ private function ApplyGravityAndJumping (velocity : Vector2) {
 
 function OnControllerColliderHit (hit : ControllerColliderHit) {
 	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0) {
-		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector2.zero)
-			groundNormal = hit.normal;
-		else
-			groundNormal = lastGroundNormal;
+		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector2.zero) groundNormal = hit.normal;
+		else groundNormal = lastGroundNormal;
 		
 		movingPlatform.hitPlatform = hit.collider.transform;
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector2.zero;
 	}
 	
-	
-	if (hit.gameObject.tag == "Player") 
-	{
-		//if ((hit.normal.x > 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionRight") ||
-		//	(hit.normal.x < 0 && hit.gameObject.GetComponent(CharacterAnimation).sprite.curAnim.name == "actionLeft"))
-		//{
-		//	characterAnimation.spriteManager.RemoveSprite(characterAnimation.sprite);
-		//	Destroy(gameObject);//Application.LoadLevel(Application.loadedLevel);
-		//}
-		//else
-		//{
-			hit.gameObject.GetComponent(FPSInputController).takeDamage();
-		//}
-	}
+	if (hit.gameObject.tag == "Player") hit.gameObject.GetComponent(FPSInputController).takeDamage();
 }
 
 private function SubtractNewPlatformVelocity () {
