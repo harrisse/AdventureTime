@@ -354,8 +354,26 @@ function FixedUpdate() {
 		}
 	}
 	
+	if (characterAnimation.animationType == "LSP") {
+		if (movement.velocity.y < 0)
+			movement.velocity.y = -5;
+		var antiGravPlatforms = GameObject.FindGameObjectsWithTag("AntiGravPlatform");
+		for (var platform : GameObject in antiGravPlatforms)
+		{
+			if (Mathf.Abs(platform.transform.position.x - gameObject.transform.position.x) < platform.transform.localScale.x / 2 &&
+					gameObject.transform.position.y > platform.transform.position.y) {
+				var antigrav : AntiGravPlatform = platform.GetComponent(AntiGravPlatform);
+				var velMultiplier:float = (platform.transform.position.y + antigrav.floatHeight) - gameObject.transform.position.y;
+				movement.velocity.y = antigrav.risingSpeed * velMultiplier;
+				grounded = false;
+			}
+		}
+	} 
+	
 	if (useFixedUpdate) UpdateFunction();
 }
+
+private var normalGravity: float = -1;
 
 function takeDamage() {
 	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();

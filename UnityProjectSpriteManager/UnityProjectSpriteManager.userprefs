@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterAnimation.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterMotor.js">
     <Files>
-      <File FileName="Assets\Scripts\CharacterMotor.js" Line="341" Column="30" />
-      <File FileName="Assets\Scripts\CharacterAnimation.js" Line="284" Column="14" />
-      <File FileName="Assets\Scripts\FPSInputController.js" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="359" Column="9" />
+      <File FileName="Assets\Scripts\CharacterAnimation.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\scienceTransform.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Standing.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BackAndForthInputController.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HorseInputController.js" Line="7" Column="9" />
+      <File FileName="Assets\Scripts\HorseInputController.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AntiGravPlatform.js" Line="1" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
