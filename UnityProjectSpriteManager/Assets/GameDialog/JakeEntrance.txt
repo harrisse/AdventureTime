@@ -1,0 +1,13 @@
+{
+"0":{"text":"Jake! What are you doing here?","face":"AttemptSurprise"},
+"1":{"text":"O hey man, I was tickling BMO so much that he zapped me into the game to make me stop.","face":"JakeFace"},
+"2":{"text":"Sweet man, now we can fight monsters and stuff together!","face":"FinnFace"},
+"3":{"text":"I would man, but I am feeling lazy right now and, you know, I’m more of a lover than a fighter.","face":"JakeFace"},
+"4":{"text":"Aw cram it to the butternuts! Jake I need your help!","face":"FinnFace"},
+"5":{"text":"Welllllll, I have been playing a lot of limbo lately, maybe my moves can help you out. I can go pretty low!","face":"JakeFace"},
+"6":{"text":"To swap to Jake the Dog, you press '2' on the number pad.","face":"BMOBase"},
+"7":{"text":"Jake has been working on his stretching by playing a lot of limbo. Activate his awesome limbo abilities by pressing the 'Shift' button","face":"BMOBase"},
+"8":{"text":"Jake has no in combat powers since he is feeling lazy today. To switch back to Finn, press the '1' on the number pad.","face":"BMOBase"},
+"9":{"text":"Uh oh guys, someone is at the door. I got to go. Remember I already programmed in the Ice...","face":"BMOBase"},
+"10":{"text":"OPEN THIS DOOR!","face":""}
+}
