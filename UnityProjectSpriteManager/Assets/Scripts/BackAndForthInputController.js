@@ -28,6 +28,11 @@ function FixedUpdate () {
 	else motor.inputMoveDirection = Vector2.right;
 }
 
+function Update() {
+	if (motor.IsGrounded() && isJumper) motor.inputJump = true;
+	else motor.inputJump = false;
+}
+
 // Turn around when we hit a wall in front of us.
 function OnControllerColliderHit(hit : ControllerColliderHit) {
 	if (hit.normal == Vector3.right) temp = 0;
