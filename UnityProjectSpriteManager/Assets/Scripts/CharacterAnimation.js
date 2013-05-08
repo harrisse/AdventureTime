@@ -302,7 +302,7 @@ class RicardioAnimations extends Animations {
 }
 
 class IceKingAnimations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function IceKingAnimations(width : float, height : float) {
 		super(width, height);
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(15, 1), size,1,1,1,1));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 1), size,1,1,1,3));
@@ -311,7 +311,7 @@ class IceKingAnimations extends Animations {
 }
 
 class Business1Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Business1Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(25, 1), size,1,3,3,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 1), size,1,3,3,3));
@@ -322,7 +322,7 @@ class Business1Animations extends Animations {
 }
 
 class Business2Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Business2Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(24, 1), size,1,3,3,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(1, 1), size,1,3,3,3));
@@ -333,7 +333,7 @@ class Business2Animations extends Animations {
 }
 
 class Business3Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Business3Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(23, 1), size,1,3,3,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(2, 1), size,1,3,3,3));
@@ -344,7 +344,7 @@ class Business3Animations extends Animations {
 }
 
 class BMOAnimations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function BMOAnimations(width : float, height : float) {
 		super(width, height);
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(17, 2), size,1,1,1,1));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 2), size,1,1,1,1));
@@ -353,7 +353,7 @@ class BMOAnimations extends Animations {
 }
 
 class GunterAnimations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function GunterAnimations(width : float, height : float) {
 		super(width, height);
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(22, 0), size,1,1,1,1));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 0), size,1,1,1,1));
@@ -365,7 +365,7 @@ class GunterAnimations extends Animations {
 }
 
 class Lumpy1Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Lumpy1Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 0), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 0), size,1,1,1,3));
@@ -376,7 +376,7 @@ class Lumpy1Animations extends Animations {
 }
 
 class Lumpy2Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Lumpy2Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 1), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 1), size,1,1,1,3));
@@ -387,7 +387,7 @@ class Lumpy2Animations extends Animations {
 }
 
 class Lumpy3Animations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function Lumpy3Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 2), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size,1,1,1,3));
@@ -398,7 +398,7 @@ class Lumpy3Animations extends Animations {
 }
 
 class PenguinAnimations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function PenguinAnimations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,3));
@@ -411,7 +411,7 @@ class PenguinAnimations extends Animations {
 }
 
 class ButterflyAnimations extends Animations {
-	function RicardioAnimations(width : float, height : float) {
+	function ButterflyAnimations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(16, 1), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(9, 1), size,1,1,1,3));
