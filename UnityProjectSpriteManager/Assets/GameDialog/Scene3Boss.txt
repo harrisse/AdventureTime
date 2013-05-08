@@ -1,0 +1,16 @@
+{
+"0":{"text":"Ah, my princess, I have been expecting you.","face":"Ricardio"},
+"1":{"text":"Ricardio? What are you doing here?","face":"PBFace"},
+"2":{"text":"Ah, I notice that you have Methionylalanylthreonylserylarginylglycylalanylserylarginylcysteinylproly","face":"Ricardio"},
+"3":{"text":"-larginylaspartylisoleucylalanylasparaginylvalylmethionylglutaminylarginyl-leucylglutaminylaspartylglutamylglutaminylglutamylisoleucylvalylglutaminy-llysylarginylthreonylphenylalanylthreonyllysyltryptophylisoleucylasparagi","face":"Ricardio"},
+"4":{"text":"-nylserylhistidylleucylalanyllysylarginyllysylprolylprolylmeth...","face":"Ricardio"},
+"5":{"text":"I have an acidic version. You know what they say, NEVER LEAVE HOME WITHOUT IT.","face":"Ricardio"},
+"6":{"text":"I hypothesize that if we fuse our compounds the oxidation of the reaction would ensure that both compounds are neutralized. ","face":"PBFace"},
+"7":{"text":"That is correct! More importantly princess, I am scientifically experimenting with the attractive appeal of iambic pentameter love poetry and I was wondering if you would be my subject.","face":"Ricardio"},
+"8":{"text":"Yuck!","face":"AttemptSurprise"},
+"9":{"text":"Haha! He just asked out Princess Bubblegum with nerd science!","face":"JakeFace"},
+"10":{"text":"I am sorry Ricardio, but that experiment must be put on hold while I assist Finn and Jake with their quest to get my taxes, uh, I mean Enchiridion. Now, if you will be so kind to hand me my chemistry set.","face":"PBFace"},
+"11":{"text":"Never! Princess Bubblegum I will not allow you to waste precious brain cells and time we could be kissing! By my calculations, you have a less than .01% chance of being able to defeat me so surrender your beautiful succulent lips to me.","face":"Ricardio"},
+"12":{"text":"How about you help us find the Enchiridion and then we pay you once the game is over? There will be some pretty mathematical adventure action.","face":"FinnFace"},
+"13":{"text":"Princess I will defend your honor in battle no matter the odds!","face":"FinnFace"}
+}

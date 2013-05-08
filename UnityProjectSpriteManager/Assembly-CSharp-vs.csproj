@@ -49,10 +49,13 @@
      <None Include="Assets\GameDialog\Dialog0.txt" />
      <None Include="Assets\GameDialog\JakeEntrance.txt" />
      <None Include="Assets\GameDialog\Scene1.txt" />
+     <None Include="Assets\GameDialog\Scene4Prelude.txt" />
      <None Include="Assets\GameDialog\IceKingEntrance.txt" />
      <None Include="Assets\GameDialog\Scene3.txt" />
      <None Include="Assets\GameDialog\Scene2.txt" />
      <None Include="Assets\GameDialog\Scene2End.txt" />
+     <None Include="Assets\GameDialog\Scene3Boss.txt" />
+     <None Include="Assets\GameDialog\Scene4Start.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

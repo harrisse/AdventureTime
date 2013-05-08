@@ -389,12 +389,19 @@ function Update() {
 public var spells: Transform;
 public var science : scienceTransform;
 private var scienceDelay : int = 0;
+public var clips : AudioClip[];
 
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
 	var object : scienceTransform;
 	// Perform the correct animation
 	if (inputAction) {
+		if (characterAnimation.animationType == "LSP"){
+			var audSrc : AudioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(AudioSource);
+			audSrc.clip = clips[Random.Range(0,clips.length)];
+			audSrc.Play();
+			//AudioSource.PlayClipAtPoint(clip,controller.transform.position);
+		}
 		if (inputMoveDirection.x < 0){
 			characterAnimation.actionLeft();
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {

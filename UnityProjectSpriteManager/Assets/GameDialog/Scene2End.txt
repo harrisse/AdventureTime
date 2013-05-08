@@ -8,5 +8,5 @@
 "6":{"text":"Never underestimate my powers man.","face":"JakeFace"},
 "7":{"text":"Like stretching powers?","face":"FinnFace"},
 "8":{"text":"Nope! Snoozin’ powers. Plus, if we sleep now we will probably see the location of the Enchiridion in our dreams and then we would find it 50 times faster!","face":"JakeFace"},
-"9":{"text":"Okay, you win. Let’s go to bed.","face":"FinnTalk"}
+"9":{"text":"Okay, you win. Let’s go to bed.","face":"AttemptTalk"}
 }
