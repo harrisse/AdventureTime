@@ -21,10 +21,13 @@ function takeDamage() {
 	if (invulnCounter == 0) {
 		invulnCounter = invulnTime;
 		hp--;
-		player.transform.position.x-=30;
 		if (hp <= 0) {
 			motor.characterAnimation.spriteManager.RemoveSprite(motor.characterAnimation.sprite);
 			Destroy(gameObject);
+		}
+		else
+		{
+			player.transform.position.x-=30;
 		}
 	}
 }
