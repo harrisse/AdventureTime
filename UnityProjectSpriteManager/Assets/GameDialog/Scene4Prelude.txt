@@ -20,8 +20,10 @@
 "18":{"text":"LUMPIN BELIEVE ME FOR ONCE JAKE!","face":"LSPFace"},
 "19":{"text":"Okay, okay, calm down. We can go look for it in Lumpy Space.","face":"AttemptTalk"},
 "20":{"text":"I’m totally gonna get Finn into Lumpy Space and lump up on him and make Brad jealous.","face":"LSPFace"},
-"21":{"text":"Where is the entrance to Lumpy Space LSP?","face":"PBFace"},
-"22":{"text":"There’s a secret entrance over here. It’s that frog next to that mushroom.","face":"LSPFace"},
-"23":{"text":"Password LSP?","face":""},
-"24":{"text":"LUMPIN ITS 2013!!!!!","face":"LSPFace"}
+"21":{"text":"What was that LSP?","face":"AttemptTalk"},
+"22":{"text":"Oh nothing Finn!","face":"LSPFace"},
+"23":{"text":"Where is the entrance to Lumpy Space LSP?","face":"PBFace"},
+"24":{"text":"There’s a secret entrance over here. It’s that frog next to that mushroom.","face":"LSPFace"},
+"25":{"text":"Password LSP?","face":""},
+"26":{"text":"LUMPIN ITS 2013!!!!!","face":"LSPFace"}
 }

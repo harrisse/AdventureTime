@@ -4,7 +4,7 @@
 "2":{"text":"If you encounter any monsters along the way you will have to fight them off with your sword.","face":"BMOBase"},
 "3":{"text":"You can do this by pressing 'Shift.'","face":"BMOBase"},
 "4":{"text":"Also, if you ever need to hurdle an obstacle you can press the 'Spacebar' to jump.","face":"BMOBase"},
-"5":{"text":Heheheheheheeeeeeeeeee…. Jake stop it…….. Jaaaaaaaaaake stopppppp. HAHAHA… Finn I got to go."","face":"BMOBase"},
+"5":{"text":"Heheheheheheeeeeeeeeee…. Jake stop it…….. Jaaaaaaaaaake stopppppp. HAHAHA… Finn I got to go.","face":"BMOBase"},
 "6":{"text":"Jake is tickling me and he won’t, hahahaha, stop! Finn, be careful, TEHEHEHE, and watch out for the, BAHAHA, Ice..","face":"BMOBase"},
 "7":{"text":"Hmm... I never knew BMO was so ticklish.","face":"AttemptTalk"}
 }

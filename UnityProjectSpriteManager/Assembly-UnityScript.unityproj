@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CharacterAnimation.js" />
      <Compile Include="Assets\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Scripts\HorseEndDialog.js" />
      <Compile Include="Assets\Scripts\HorseInputController.js" />
      <Compile Include="Assets\Scripts\JSONUtils.js" />
      <Compile Include="Assets\Scripts\MoveToLevel.js" />

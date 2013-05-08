@@ -1,6 +1,5 @@
+
 public var dialogFile:TextAsset;
-public var loadLevelAfter : boolean = false;
-public var nextLevel : int = 0;
 
 private var distanceToActivate : float = .5;
 private var jsonText;
@@ -11,15 +10,34 @@ private var player : UnityEngine.GameObject;
 private var hasLoaded = false;
 private var isRunning = false;
 private var hasRun = false;
+private var run = false;
+
+
+var nextLevel : int = 0;
+var isBossLevel : boolean = false;
+
+function Start () {
+
+}
 
 function Awake()
 {
 	player = GameObject.FindGameObjectWithTag("Player");
 }
- 
+
+function OnTriggerEnter() {
+	if (!isBossLevel || GameObject.FindGameObjectsWithTag("Enemy").Length == 0) run = true;
+	if (hasRun) Application.LoadLevel(nextLevel);
+}
+
+function OnTriggerStay() {
+	if (!isBossLevel || GameObject.FindGameObjectsWithTag("Enemy").Length == 0) run = true;
+	if (hasRun) Application.LoadLevel(nextLevel);
+}
+
 function OnGUI()
 {
-	if (!hasRun && !isRunning && Mathf.Abs(player.transform.position.x - gameObject.transform.position.x) < distanceToActivate)
+	if (run && !hasRun && !isRunning)
 	{
 		isRunning = true;
 		player.GetComponent(CharacterMotor).canControl = false;
@@ -75,10 +93,10 @@ function OnGUI()
 			Time.timeScale = 1.0;
 			isRunning = false;
 			hasRun = true;
-			if (loadLevelAfter)
-			{
-				Application.LoadLevel(nextLevel);
-			}
 		}
 	}
+}
+
+function Update () {
+	
 }

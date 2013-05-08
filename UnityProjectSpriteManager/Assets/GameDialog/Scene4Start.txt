@@ -11,9 +11,9 @@
 "9":{"text":"LUMPIN OUT WITH IT.","face":"LSPFace"},
 "10":{"text":"Okay, okay, okay, how far can you throw a hotdog?","face":"IceKing"},
 "11":{"text":"I don’t know, how far can you throw a hotdog?","face":"FinnFace"},
-"12":{"text":"IT MATTERS WHEN YOU GOT YOUR TONSOLS OUT!!! HAHAHAHAHAHAH","face":"IceKing"},
+"12":{"text":"IT MATTERS WHEN YOU GET YOUR TONSOLS OUT!!! HAHAHAHAHAHAH","face":"IceKing"},
 "13":{"text":"what.... The.... lump....","face":"LSPFace"},
 "14":{"text":"That wasn’t funny at all. Goodbye Ice King.","face":"BMOBase"},
-"15":{"text":"You just gotta think about it and let it sit on your brain a bit.","face":"IceKing"},
+"15":{"text":"You just gotta think about it and let it fester on your brain a bit.","face":"IceKing"},
 "16":{"text":"GET OUT OF HERE ICE KING!","face":"AttemptTalk"}
 }
