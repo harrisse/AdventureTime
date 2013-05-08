@@ -1,0 +1,19 @@
+{
+"0":{"text":"Guysssssssssssssssssssssss, Homiessssssssssssssssssss, Brosssssssssssssssssssssssssss, what’s up?","face":"IceKing"},
+"1":{"text":"Ice King, we don’t have time for you. Go bother someone else.","face":"AttemptTalk"},
+"2":{"text":"Playing hard to get are we? Well two can play at that game. Fine Finn but I may not want to hang out with you guys later because of that really cool party I am going to.","face":"IceKing"},
+"3":{"text":"Good for you Ice King, welp cya.","face":"AttemptTalk"},
+"4":{"text":"WAIT, that was suppose to make you jealous and want to hang out with me.","face":"IceKing"},
+"5":{"text":"Ice King, don’t make me kick you in the boinloins.","face":"AttemptTalk"},
+"6":{"text":"Oh, I know how to make you guys want to hang out with me! Let me tell you guys a joke.","face":"IceKing"},
+"7":{"text":"Okay King of Ice, you can tell us one joke. But when we don’t laugh you have to leave us alone until we find the Enchiridion.","face":"FinnFace"},
+"8":{"text":"Oh yay! I can’t wait for us all to giggle together at this hilarious joke I got from a Laffy Taffy wrapper.","face":"IceKing"},
+"9":{"text":"LUMPIN OUT WITH IT.","face":"LSPFace"},
+"10":{"text":"Okay, okay, okay, how far can you throw a hotdog?","face":"IceKing"},
+"11":{"text":"I don’t know, how far can you throw a hotdog?","face":"FinnFace"},
+"12":{"text":"IT MATTERS WHEN YOU GOT YOUR TONSOLS OUT!!! HAHAHAHAHAHAH","face":"IceKing"},
+"13":{"text":"what.... The.... lump....","face":"LSPFace"},
+"14":{"text":"That wasn’t funny at all. Goodbye Ice King.","face":"BMOBase"},
+"15":{"text":"You just gotta think about it and let it sit on your brain a bit.","face":"IceKing"},
+"16":{"text":"GET OUT OF HERE ICE KING!","face":"AttemptTalk"}
+}

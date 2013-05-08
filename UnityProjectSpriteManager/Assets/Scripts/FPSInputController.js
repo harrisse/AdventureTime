@@ -29,7 +29,8 @@ function Update () {
 	if (frozenTime <= 0) {
 		var direction = Input.GetAxis("Horizontal");
 		motor.inputMoveDirection = new Vector2(direction, 0);
-		motor.inputJump = Input.GetButton("Jump");
+		if (!(motor.characterAnimation.animationType == "LSP"))
+			motor.inputJump = Input.GetButton("Jump");
 		motor.inputAction = Input.GetButton("Action");
 		if (getCharacterButton("Finn")) {
 			motor.characterAnimation.animationType = "Finn";

@@ -30,6 +30,7 @@ function loadAnimationSet() {
 	else if (animationType == "PB") animationSet = new PBAnimations(uvWidth, uvHeight);
 	else if (animationType == "Snail") animationSet = new SnailAnimations(uvWidth, uvHeight);
 	else if (animationType == "Horse") animationSet = new HorseAnimations(uvWidth, uvHeight);
+	else if (animationType == "Ricardio") animationSet = new RicardioAnimations(uvWidth, uvHeight);
 	else animationSet = new WormAnimations(uvWidth, uvHeight);
 
 	if (sprite != null) spriteManager.RemoveSprite(sprite);
@@ -279,6 +280,23 @@ class SnailAnimations extends Animations {
 
 class HorseAnimations extends Animations {
 	function HorseAnimations(width : float, height : float) {
+		super(width, height);
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 0), size,1,1,1,3));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size,1,2,2,3));
+		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(14, 0), size, 1, 1, 1, 1));
+		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size, 1, 1, 1, 1));
+		actionRight.SetAnim(actionRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
+		actionLeft.SetAnim(actionLeft.BuildUVAnim(getUV(0, 2), size,1,1,1,1));
+		offset = new Vector3(0,1.3, 0);
+		size = new Vector2(2 * width, height);
+		xScale = 8;
+	}
+}
+
+class RicardioAnimations extends Animations {
+	function RicardioAnimations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(14, 0), size,1,1,1,1));
 		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 0), size,1,1,1,3));

@@ -3,6 +3,9 @@ private var graphics : UnityEngine.GameObject;
 private var motor : CharacterMotor;
 private var temp : int = 0;
 
+// Whether the enemy should jump constantly.
+var isJumper : boolean = false;
+
 // Whether we should go left to start or right to start.
 var goLeft : boolean = false;
 

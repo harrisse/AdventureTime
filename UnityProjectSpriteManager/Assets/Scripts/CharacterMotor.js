@@ -354,13 +354,32 @@ function FixedUpdate() {
 		}
 	}
 	
+	if (characterAnimation.animationType == "LSP") {
+		if (movement.velocity.y < 0)
+			movement.velocity.y = -5;
+		var antiGravPlatforms = GameObject.FindGameObjectsWithTag("AntiGravPlatform");
+		for (var platform : GameObject in antiGravPlatforms)
+		{
+			if (Mathf.Abs(platform.transform.position.x - gameObject.transform.position.x) < platform.transform.localScale.x / 2 &&
+					gameObject.transform.position.y > platform.transform.position.y) {
+				var antigrav : AntiGravPlatform = platform.GetComponent(AntiGravPlatform);
+				var velMultiplier:float = (platform.transform.position.y + antigrav.floatHeight) - gameObject.transform.position.y;
+				movement.velocity.y = antigrav.risingSpeed * velMultiplier;
+				grounded = false;
+			}
+		}
+	} 
+	
 	if (useFixedUpdate) UpdateFunction();
 }
+
+private var normalGravity: float = -1;
 
 function takeDamage() {
 	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
 	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
 	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
+	else if (gameObject.name == "Ricardio") GetComponent(RicardioInputController).takeDamage();
 }
 
 function Update() {
@@ -370,12 +389,19 @@ function Update() {
 public var spells: Transform;
 public var science : scienceTransform;
 private var scienceDelay : int = 0;
+public var clips : AudioClip[];
 
 private function ApplyInputVelocityChange(velocity : Vector2) {	
 	if (!canControl) inputMoveDirection = Vector2.zero;
 	var object : scienceTransform;
 	// Perform the correct animation
 	if (inputAction) {
+		if (characterAnimation.animationType == "LSP"){
+			var audSrc : AudioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(AudioSource);
+			audSrc.clip = clips[Random.Range(0,clips.length)];
+			audSrc.Play();
+			//AudioSource.PlayClipAtPoint(clip,controller.transform.position);
+		}
 		if (inputMoveDirection.x < 0){
 			characterAnimation.actionLeft();
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
