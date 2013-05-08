@@ -13,10 +13,8 @@ private var actionReverse : boolean;
 function init(charObject : GameObject) {
 	characterObject = charObject;
 
-	var t : Texture;
-	t = spriteManager.material.GetTexture("_MainTex");
-	uvWidth = 64f / t.width;
-	uvHeight = 64f / t.height;
+	uvWidth = 64f / 1664f;
+	uvHeight = 64f / 256f;
 	
 	loadAnimationSet();
 }
