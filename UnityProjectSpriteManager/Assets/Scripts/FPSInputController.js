@@ -79,10 +79,22 @@ function Update () {
 		} else if (getCharacterButton("PB")) {
 			motor.characterAnimation.animationType = "PB";
 			motor.characterAnimation.loadAnimationSet();
+			controller.height = 3;
+			characterCollider.height = 3;
+			controller.center.y = 0;
+			characterCollider.center.y = 0;
+			controller.radius = .6;
+			characterCollider.radius = .6;
 			nameText.text = "PRINCESS BUBBLEGUM";
 		} else if (getCharacterButton("LSP")) {
 			motor.characterAnimation.animationType = "LSP";
 			motor.characterAnimation.loadAnimationSet();
+			controller.height = 1.7;
+			characterCollider.height = 1.7;
+			controller.center.y = -.4;
+			characterCollider.center.y = -.4;
+			controller.radius = .6;
+			characterCollider.radius = .6;
 			nameText.text = "LUMPY SPACE PRINCESS";
 		}
 	}
