@@ -199,8 +199,8 @@ class FinnAnimations extends Animations {
 class JakeAnimations extends Animations {
 	function JakeAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 0), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 0), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 0), size,1,3,3,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 0), size,1,3,3,7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(15, 0), size,1,1,1,7));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 0), size,1,1,1,7));
 		jumpRight.SetAnim(jumpRight.BuildUVAnim(getUV(15, 0), size,1,1,1,7));

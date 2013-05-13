@@ -27,6 +27,10 @@ function takeDamage() {
 	if (invulnCounter == 0) {
 		invulnCounter = invulnTime;
 		hp--;
+		var pillars = GameObject.FindGameObjectsWithTag("Pillar");
+		for (var i = 0; i < pillars.length; i++) {
+			if (pillars[i].name == "DistroyablePillar(Clone)") Destroy(pillars[i]);
+		}
 		if (hp <= 0) {
 			motor.characterAnimation.spriteManager.RemoveSprite(motor.characterAnimation.sprite);
 			Destroy(gameObject);
