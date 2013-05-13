@@ -409,8 +409,11 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 	if (inputAction) {
 		if (characterAnimation.animationType == "LSP"){
 			var audSrc : AudioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(AudioSource);
-			audSrc.clip = clips[Random.Range(0,clips.length)];
-			audSrc.Play();
+			if (!audSrc.isPlaying)
+			{
+				audSrc.clip = clips[Random.Range(0,clips.length)];
+				audSrc.Play();
+			}
 			//AudioSource.PlayClipAtPoint(clip,controller.transform.position);
 		}
 		if (inputMoveDirection.x < 0){
