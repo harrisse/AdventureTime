@@ -25,4 +25,8 @@ function Update () {
 	else motor.inputJump = false;
 }
 
+function takeDamage() {
+	// FOR SAM :3
+}
+
 @script RequireComponent (CharacterMotor)

@@ -10,6 +10,6 @@ function FixedUpdate () {
 	else
 		transform.Translate(bulletSpeed,0,0);
 		
-	if (distanceTraveled > 60)
+	if (distanceTraveled > 30)
 		Destroy(gameObject);
 }

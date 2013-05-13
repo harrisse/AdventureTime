@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\jsonGuiText.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterMotor.js">
     <Files>
-      <File FileName="Assets\Scripts\BusinessMen.js" Line="10" Column="12" />
-      <File FileName="Assets\Scripts\CharacterMotor.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterAnimation.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\jsonGuiText.js" Line="55" Column="21" />
+      <File FileName="Assets/Scripts/FPSInputController.js" Line="29" Column="23" />
+      <File FileName="Assets/Scripts/scienceTransform.js" Line="13" Column="26" />
+      <File FileName="Assets/Scripts/CharacterMotor.js" Line="427" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

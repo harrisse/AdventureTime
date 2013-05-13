@@ -386,6 +386,8 @@ private var normalGravity: float = -1;
 function takeDamage() {
 	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
 	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "Butterfly") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "LumpyPerson") GetComponent(TrackingInputController).takeDamage();
 	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
 	else if (gameObject.name == "Ricardio") GetComponent(RicardioInputController).takeDamage();
 	else if (gameObject.name == "BusinessMan") GetComponent(BusinessMen).takeDamage();
@@ -416,7 +418,7 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
 				object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
 				object.goLeft = true;
-				scienceDelay = 10;
+				scienceDelay = 30;
 			}
 		}
 		else if (inputMoveDirection.x > 0){
@@ -424,13 +426,13 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
 				object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
 				object.goLeft = false;
-				scienceDelay = 10;
+				scienceDelay = 30;
 			}
 		}
 		else {
 			characterAnimation.action();
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
-				scienceDelay = 10;
+				scienceDelay = 30;
 				if (characterAnimation.facingRight())
 				{
 					object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
