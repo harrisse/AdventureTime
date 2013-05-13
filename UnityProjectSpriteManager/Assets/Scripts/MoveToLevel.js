@@ -1,4 +1,3 @@
-#pragma strict
 var nextLevel : int = 0;
 var isBossLevel : boolean = false;
 
