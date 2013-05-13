@@ -1,6 +1,7 @@
 public var dialogFile:TextAsset;
 public var loadLevelAfter : boolean = false;
 public var nextLevel : int = 0;
+public var onAndOffObjects : GameObject[];
 
 private var distanceToActivate : float = .5;
 private var jsonText;
@@ -11,6 +12,7 @@ private var player : UnityEngine.GameObject;
 private var hasLoaded = false;
 private var isRunning = false;
 private var hasRun = false;
+
 
 function Awake()
 {
@@ -41,6 +43,16 @@ function OnGUI()
 			
 			face = jsonText[index.ToString()]["face"];
 			text = jsonText[index.ToString()]["text"]+"...(Press Space)";
+			turnOff = jsonText[index.ToString()]["turnOff"];
+			turnOn = jsonText[index.ToString()]["turnOn"];
+			if (turnOff != null)
+			{
+				ToggleVisibility(onAndOffObjects[parseInt(turnOff)], false);
+			}
+			if (turnOn != null)
+			{
+				ToggleVisibility(onAndOffObjects[parseInt(turnOn)], true);
+			}
 			//if( GUI.Button( Rect( .45 * Screen.width, 0.45 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), "Next" ) )
 			if (canIndex && Input.GetKeyUp(KeyCode.Space))
 			{
@@ -86,4 +98,12 @@ function OnGUI()
 			}
 		}
 	}
+}
+
+function ToggleVisibility(go : GameObject, on : boolean) {
+    // toggles the visibility of this gameobject and all it's children
+    var renderers = go.GetComponentsInChildren.();
+10.    for (var r : Renderer in renderers) {
+        r.enabled = on;
+    }
 }
