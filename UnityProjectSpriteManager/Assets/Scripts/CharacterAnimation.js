@@ -199,8 +199,8 @@ class FinnAnimations extends Animations {
 class JakeAnimations extends Animations {
 	function JakeAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(15, 0), size,1,1,1,7));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(10, 0), size,1,1,1,7));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 0), size,1,1,1,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 0), size,1,1,1,7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(15, 0), size,1,1,1,7));
 		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 0), size,1,1,1,7));
 		jumpRight.SetAnim(jumpRight.BuildUVAnim(getUV(15, 0), size,1,1,1,7));
@@ -293,8 +293,8 @@ class HorseAnimations extends Animations {
 class RicardioAnimations extends Animations {
 	function RicardioAnimations(width : float, height : float) {
 		super(width, height);
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(17, 0), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 0), size,1,1,1,1));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(16, 0), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(9, 0), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -344,8 +344,8 @@ class Business3Animations extends Animations {
 class BMOAnimations extends Animations {
 	function BMOAnimations(width : float, height : float) {
 		super(width, height);
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(17, 2), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 2), size,1,1,1,1));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(21, 3), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(4, 3), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -398,12 +398,12 @@ class Lumpy3Animations extends Animations {
 class PenguinAnimations extends Animations {
 	function PenguinAnimations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
-		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
-		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(22, 3), size,1,1,1,1));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,1));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(22, 3), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,1));
+		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(22, 3), size,1,1,1,1));
+		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(3, 3), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
