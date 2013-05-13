@@ -55,10 +55,6 @@ function takeDamage() {
 			motor.characterAnimation.spriteManager.RemoveSprite(motor.characterAnimation.sprite);
 			Destroy(gameObject);
 		}
-		else
-		{
-			player.transform.position.x-=30;
-		}
 	}
 }
 

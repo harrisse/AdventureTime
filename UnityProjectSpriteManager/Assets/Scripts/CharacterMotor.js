@@ -380,6 +380,7 @@ function takeDamage() {
 	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
 	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
 	else if (gameObject.name == "Ricardio") GetComponent(RicardioInputController).takeDamage();
+	else if (gameObject.name == "BusinessMan") GetComponent(BusinessMen).takeDamage();
 }
 
 function Update() {
