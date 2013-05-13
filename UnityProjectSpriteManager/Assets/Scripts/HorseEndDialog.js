@@ -84,7 +84,11 @@ function OnGUI()
 			//GUI.Label(Rect( .45 * Screen.width, 0.80 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), text);
 			//GUI.Label(Rect( .4 * Screen.width, 0.80 * Screen.height, 0.05 * Screen.width, 0.1 * Screen.height ), Resources.Load(face) as Texture2D);
 			GUI.Box(Rect( 0, 0.75 * Screen.height, Screen.width, .25 * Screen.height ), "");
-			GUI.Label(Rect( .3 * Screen.width, 0.90 * Screen.height, 0.5 * Screen.width, 0.1 * Screen.height ), text);
+			var gs : GUIStyle = new GUIStyle();
+			gs.fontSize = 30;
+			gs.wordWrap = true;
+			gs.normal.textColor = Color.white;
+			GUI.Label(Rect( .2 * Screen.width, 0.80 * Screen.height, 0.7 * Screen.width, 0.2 * Screen.height ), text, gs);
 			GUI.DrawTexture(Rect( .1 * Screen.width, 0.80 * Screen.height, 64, 64 ), Resources.Load(face) as Texture2D, ScaleMode.StretchToFill, true, 0);
 			//GUI.Label(Rect( .45 * Screen.width, 0.90 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), index.ToString());
 		}
