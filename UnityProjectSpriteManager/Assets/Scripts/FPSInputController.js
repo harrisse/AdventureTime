@@ -5,6 +5,8 @@ private var graphics : UnityEngine.GameObject;
 private var invulnerabilityTime : int = 0;
 private var characterCollider : CapsuleCollider;
 private var controller : CharacterController;
+private var jakeEnabled : boolean = false;
+var enableJakeXVal : int = 409;
 var frozenTime : int = 0;
 
 // How far you can fall before dying.
@@ -26,6 +28,8 @@ function Update () {
 
 	if (Input.GetKey("escape")) Application.Quit();
 	
+	if (Application.loadedLevel == 0 && transform.position.x >= enableJakeXVal) jakeEnabled = true;
+	
 	if (frozenTime <= 0) {
 		var direction = Input.GetAxis("Horizontal");
 		motor.inputMoveDirection = new Vector2(direction, 0);
@@ -42,7 +46,7 @@ function Update () {
 			controller.radius = .6;
 			characterCollider.radius = .6;
 			nameText.text = "FINN THE HUMAN";
-		} else if (getCharacterButton("Jake")) {
+		} else if (getCharacterButton("Jake") && (Application.loadedLevel > 0 || jakeEnabled)) {
 			motor.characterAnimation.animationType = "Jake";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 1.7;
@@ -76,17 +80,17 @@ function Update () {
 			frozenTime = 3 / (7 * Time.fixedDeltaTime);
 			motor.inputMoveDirection = Vector2.zero;
 			motor.inputJump = false;
-		} else if (getCharacterButton("PB")) {
+		} else if (getCharacterButton("PB") && Application.loadedLevel >= 2) {
 			motor.characterAnimation.animationType = "PB";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 3;
 			characterCollider.height = 3;
-			controller.center.y = 0;
-			characterCollider.center.y = 0;
+			controller.center.y = .25;
+			characterCollider.center.y = .25;
 			controller.radius = .6;
 			characterCollider.radius = .6;
 			nameText.text = "PRINCESS BUBBLEGUM";
-		} else if (getCharacterButton("LSP")) {
+		} else if (getCharacterButton("LSP") && Application.loadedLevel >= 4) {
 			motor.characterAnimation.animationType = "LSP";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 1.7;

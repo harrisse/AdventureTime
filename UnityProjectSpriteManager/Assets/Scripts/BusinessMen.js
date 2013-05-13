@@ -19,7 +19,7 @@ var goLeft : boolean = false;
 var time : float = 3f;
 
 // Initialize variables
-function Awake () {
+function Awake() {
 	motor = GetComponent(CharacterMotor);
 	player = GameObject.Find("Player");
 	graphics = GameObject.Find("PlayerGraphics");
@@ -27,7 +27,7 @@ function Awake () {
 }
 
 // Use FixedUpdate here or else our worms will travel further as FPS decreases
-function FixedUpdate () {
+function FixedUpdate() {
 	if (invulnCounter > 0) invulnCounter--;
 	if (temp >= 2 * time / Time.fixedDeltaTime) temp = 0;
 	temp++;
