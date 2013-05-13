@@ -12,13 +12,15 @@ private var pillar : GameObject;
 function Awake () {
 	motor = GetComponent(CharacterMotor);
 	player = GameObject.Find("Player");
-	pillar = GameObject.Find("AntiGravPlatform");
+	pillar = GameObject.Find("DistroyablePillar");
 }
 
 // Use FixedUpdate here or else our worms will travel further as FPS decreases
 function FixedUpdate () {
 	if (invulnCounter > 0) invulnCounter--;
-	if (Random.value < pillarSpawnChance) Instantiate(pillar, Vector3(100 * (Random.value - 0.5), 20, 0), Quaternion.identity);
+	if (Random.value < pillarSpawnChance) {
+		Instantiate(pillar, Vector3(10 * Mathf.Round((Random.value - .5) * 10), 22, 0), Quaternion.identity);
+	}
 }
 
 function takeDamage() {
