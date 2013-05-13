@@ -357,7 +357,7 @@ function FixedUpdate() {
 		if (movement.velocity.y < 0)
 			movement.velocity.y = -5;
 	}
-	else if (characterAnimation.animationType == "LSP" || characterAnimation.animationType == "BusinessMan1" 
+	if (characterAnimation.animationType == "LSP" || characterAnimation.animationType == "BusinessMan1" 
 		|| characterAnimation.animationType == "BusinessMan2" || characterAnimation.animationType == "BusinessMan3")
 	{
 		var antiGravPlatforms = GameObject.FindGameObjectsWithTag("AntiGravPlatform");
