@@ -5,7 +5,7 @@ private var graphics : UnityEngine.GameObject;
 private var invulnerabilityTime : int = 0;
 private var characterCollider : CapsuleCollider;
 private var controller : CharacterController;
-private var jakeEnabled : boolean = false;
+var jakeEnabled : boolean = false;
 var enableJakeXVal : int = 409;
 var frozenTime : int = 0;
 
@@ -28,7 +28,7 @@ function Update () {
 
 	if (Input.GetKey("escape")) Application.Quit();
 	
-	if (Application.loadedLevel == 0 && transform.position.x >= enableJakeXVal) jakeEnabled = true;
+	if (Application.loadedLevel == 1 && transform.position.x >= enableJakeXVal) jakeEnabled = true;
 	
 	if (frozenTime <= 0) {
 		var direction = Input.GetAxis("Horizontal");
@@ -46,7 +46,7 @@ function Update () {
 			controller.radius = .6;
 			characterCollider.radius = .6;
 			nameText.text = "FINN THE HUMAN";
-		} else if (getCharacterButton("Jake") && (Application.loadedLevel > 0 || jakeEnabled)) {
+		} else if (getCharacterButton("Jake") && (Application.loadedLevel > 1 || jakeEnabled)) {
 			motor.characterAnimation.animationType = "Jake";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 1.7;
