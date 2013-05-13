@@ -29,17 +29,17 @@ function loadAnimationSet() {
 	else if (animationType == "Snail") animationSet = new SnailAnimations(uvWidth, uvHeight);
 	else if (animationType == "Horse") animationSet = new HorseAnimations(uvWidth, uvHeight);
 	else if (animationType == "Ricardio") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "IceKing") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "BusinessMan1") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "BusinessMan2") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "BusinessMan3") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "BMO") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "Gunter") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "LumpyPerson1") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "LumpyPerson2") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "LumpyPerson3") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "Penguin") animationSet = new RicardioAnimations(uvWidth, uvHeight);
-	else if (animationType == "Butterfly") animationSet = new RicardioAnimations(uvWidth, uvHeight);
+	else if (animationType == "IceKing") animationSet = new IceKingAnimations(uvWidth, uvHeight);
+	else if (animationType == "BusinessMan1") animationSet = new Business1Animations(uvWidth, uvHeight);
+	else if (animationType == "BusinessMan2") animationSet = new Business2Animations(uvWidth, uvHeight);
+	else if (animationType == "BusinessMan3") animationSet = new Business3Animations(uvWidth, uvHeight);
+	else if (animationType == "BMO") animationSet = new BMOAnimations(uvWidth, uvHeight);
+	else if (animationType == "Gunter") animationSet = new GunterAnimations(uvWidth, uvHeight);
+	else if (animationType == "LumpyPerson1") animationSet = new Lumpy1Animations(uvWidth, uvHeight);
+	else if (animationType == "LumpyPerson2") animationSet = new Lumpy2Animations(uvWidth, uvHeight);
+	else if (animationType == "LumpyPerson3") animationSet = new Lumpy3Animations(uvWidth, uvHeight);
+	else if (animationType == "Penguin") animationSet = new PenguinAnimations(uvWidth, uvHeight);
+	else if (animationType == "Butterfly") animationSet = new ButterflyAnimations(uvWidth, uvHeight);
 	else animationSet = new WormAnimations(uvWidth, uvHeight);
 
 	if (sprite != null) spriteManager.RemoveSprite(sprite);
@@ -303,7 +303,7 @@ class IceKingAnimations extends Animations {
 	function IceKingAnimations(width : float, height : float) {
 		super(width, height);
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(15, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 1), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 1), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -311,10 +311,10 @@ class IceKingAnimations extends Animations {
 class Business1Animations extends Animations {
 	function Business1Animations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(25, 1), size,1,3,3,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 1), size,1,3,3,3));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(25, 1), size,1,3,3,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(0, 1), size,1,3,3,7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(25, 0), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(0, 0), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -322,10 +322,10 @@ class Business1Animations extends Animations {
 class Business2Animations extends Animations {
 	function Business2Animations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(24, 1), size,1,3,3,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(1, 1), size,1,3,3,3));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(24, 1), size,1,3,3,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(1, 1), size,1,3,3,7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(24, 0), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(1, 0), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(1, 0), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -333,10 +333,10 @@ class Business2Animations extends Animations {
 class Business3Animations extends Animations {
 	function Business3Animations(width : float, height : float) {
 		super(width, height);
-		runRight.SetAnim(runRight.BuildUVAnim(getUV(23, 1), size,1,3,3,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(2, 1), size,1,3,3,3));
+		runRight.SetAnim(runRight.BuildUVAnim(getUV(23, 1), size,1,3,3,7));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(2, 1), size,1,3,3,7));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(23, 0), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(2, 0), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(2, 0), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -366,9 +366,9 @@ class Lumpy1Animations extends Animations {
 	function Lumpy1Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 0), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 0), size,1,1,1,3));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 0), size,1,1,1,1));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(18, 0), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 0), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 0), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -377,9 +377,9 @@ class Lumpy2Animations extends Animations {
 	function Lumpy2Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 1), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 1), size,1,1,1,3));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 1), size,1,1,1,1));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(18, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 1), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 1), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -388,9 +388,9 @@ class Lumpy3Animations extends Animations {
 	function Lumpy3Animations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(18, 2), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size,1,1,1,3));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(7, 2), size,1,1,1,1));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(18, 2), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 2), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(7, 2), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
@@ -399,9 +399,9 @@ class PenguinAnimations extends Animations {
 	function PenguinAnimations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,3));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
 		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(17, 1), size,1,1,1,1));
 		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(8, 1), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
@@ -412,9 +412,9 @@ class ButterflyAnimations extends Animations {
 	function ButterflyAnimations(width : float, height : float) {
 		super(width, height);
 		runRight.SetAnim(runRight.BuildUVAnim(getUV(16, 1), size,1,1,1,1));
-		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(9, 1), size,1,1,1,3));
+		runLeft.SetAnim(runLeft.BuildUVAnim(getUV(9, 1), size,1,1,1,1));
 		standRight.SetAnim(standRight.BuildUVAnim(getUV(16, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(9, 1), size,1,2,2,3));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(9, 1), size,1,1,1,1));
 		jumpRight.SetAnim(standRight.BuildUVAnim(getUV(16, 1), size,1,1,1,1));
 		jumpLeft.SetAnim(standLeft.BuildUVAnim(getUV(9, 1), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
