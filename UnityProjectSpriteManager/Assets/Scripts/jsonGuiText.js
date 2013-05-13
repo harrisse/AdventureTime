@@ -102,8 +102,8 @@ function OnGUI()
 
 function ToggleVisibility(go : GameObject, on : boolean) {
     // toggles the visibility of this gameobject and all it's children
-    var renderers = go.GetComponentsInChildren.();
-10.    for (var r : Renderer in renderers) {
+    var renderers : Renderer[] = go.GetComponentsInChildren(Renderer);
+    for (var r : Renderer in renderers) {
         r.enabled = on;
     }
 }
