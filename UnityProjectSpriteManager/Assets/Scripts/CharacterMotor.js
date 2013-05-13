@@ -353,22 +353,30 @@ function FixedUpdate() {
 			}
 		}
 	}
-	
-	if (characterAnimation.animationType == "LSP") {
+	else if (characterAnimation.animationType == "LSP") {
 		if (movement.velocity.y < 0)
 			movement.velocity.y = -5;
+	}
+	if (characterAnimation.animationType == "LSP" || characterAnimation.animationType == "BusinessMan1" 
+		|| characterAnimation.animationType == "BusinessMan2" || characterAnimation.animationType == "BusinessMan3")
+	{
 		var antiGravPlatforms = GameObject.FindGameObjectsWithTag("AntiGravPlatform");
 		for (var platform : GameObject in antiGravPlatforms)
 		{
 			if (Mathf.Abs(platform.transform.position.x - gameObject.transform.position.x) < platform.transform.localScale.x / 2 &&
 					gameObject.transform.position.y > platform.transform.position.y) {
 				var antigrav : AntiGravPlatform = platform.GetComponent(AntiGravPlatform);
-				var velMultiplier:float = (platform.transform.position.y + antigrav.floatHeight) - gameObject.transform.position.y;
-				movement.velocity.y = antigrav.risingSpeed * velMultiplier;
-				grounded = false;
+				var heightToFloatTo : float = platform.transform.position.y + antigrav.floatHeight;
+				if (gameObject.transform.position.y < heightToFloatTo)
+				{
+					var velMultiplier:float = heightToFloatTo - gameObject.transform.position.y;
+					movement.velocity.y = antigrav.risingSpeed * velMultiplier;
+					grounded = false;
+					break;
+				}
 			}
 		}
-	} 
+	}
 	
 	if (useFixedUpdate) UpdateFunction();
 }
@@ -378,8 +386,11 @@ private var normalGravity: float = -1;
 function takeDamage() {
 	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
 	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "Butterfly") GetComponent(BackAndForthInputController).takeDamage();
+	else if (gameObject.name == "LumpyPerson") GetComponent(TrackingInputController).takeDamage();
 	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
 	else if (gameObject.name == "Ricardio") GetComponent(RicardioInputController).takeDamage();
+	else if (gameObject.name == "BusinessMan") GetComponent(BusinessMen).takeDamage();
 }
 
 function Update() {
@@ -407,7 +418,7 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
 				object = Instantiate (science, spells.position - 2*Vector3.right, spells.rotation);
 				object.goLeft = true;
-				scienceDelay = 10;
+				scienceDelay = 30;
 			}
 		}
 		else if (inputMoveDirection.x > 0){
@@ -415,13 +426,13 @@ private function ApplyInputVelocityChange(velocity : Vector2) {
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
 				object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);
 				object.goLeft = false;
-				scienceDelay = 10;
+				scienceDelay = 30;
 			}
 		}
 		else {
 			characterAnimation.action();
 			if (characterAnimation.animationType == "PB" && scienceDelay == 0) {
-				scienceDelay = 10;
+				scienceDelay = 30;
 				if (characterAnimation.facingRight())
 				{
 					object = Instantiate (science, spells.position + 2*Vector3.right, spells.rotation);

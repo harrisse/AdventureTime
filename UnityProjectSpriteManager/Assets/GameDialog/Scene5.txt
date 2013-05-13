@@ -1,0 +1,4 @@
+{
+"0":{"text":"My super puppy smell sense is detecting high levels of business Finn! Be careful!","face":"JakeFace"},
+"1":{"text":"Looks like these business men really mean business!","face":"AttemptTalk"}
+}
