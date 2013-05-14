@@ -9,5 +9,5 @@
 "7":{"text":"Jake has been working on his stretching by playing a lot of limbo. Activate his awesome limbo abilities by pressing the 'Shift' button","face":"BMOBase"},
 "8":{"text":"Jake has no in combat powers since he is feeling lazy today. To switch back to Finn, press the '1' on the number pad.","face":"BMOBase"},
 "9":{"text":"Uh oh guys, someone is at the door. I got to go. Remember I already programmed in the Ice...","face":"BMOBase"},
-"10":{"text":"OPEN THIS DOOR!","face":""}
+"10":{"text":"OPEN THIS DOOR!","face":"","turnOff":"0"}
 }

@@ -17,6 +17,7 @@ private var hasRun = false;
 function Awake()
 {
 	player = GameObject.FindGameObjectWithTag("Player");
+	
 }
  
 function OnGUI()
@@ -34,6 +35,18 @@ function OnGUI()
 			jsonText = JSONUtils.ParseJSON(dialogFile.text);
 			stopIndex = jsonText.Keys.Count;
 			hasLoaded = true;
+			turnOff = jsonText[index.ToString()]["turnOff"];
+			turnOn = jsonText[index.ToString()]["turnOn"];
+			if (turnOff != null)
+			{
+				anim = onAndOffObjects[parseInt(turnOff)].GetComponent(CharacterAnimation);
+				anim.spriteManager.HideSprite(anim.sprite);
+			}
+			if (turnOn != null)
+			{
+				anim = onAndOffObjects[parseInt(turnOn)].GetComponent(CharacterAnimation);
+				anim.spriteManager.ShowSprite(anim.sprite);
+			}
 		}
 		if (index < stopIndex)
 		{
@@ -43,21 +56,24 @@ function OnGUI()
 			
 			face = jsonText[index.ToString()]["face"];
 			text = jsonText[index.ToString()]["text"]+"...(Press Space)";
-			turnOff = jsonText[index.ToString()]["turnOff"];
-			turnOn = jsonText[index.ToString()]["turnOn"];
-			if (turnOff != null)
-			{
-				ToggleVisibility(onAndOffObjects[parseInt(turnOff)], false);
-			}
-			if (turnOn != null)
-			{
-				ToggleVisibility(onAndOffObjects[parseInt(turnOn)], true);
-			}
+			
 			//if( GUI.Button( Rect( .45 * Screen.width, 0.45 * Screen.height, 0.1 * Screen.width, 0.1 * Screen.height ), "Next" ) )
 			if (canIndex && Input.GetKeyUp(KeyCode.Space))
 			{
 				index++;
 				canIndex = false;
+				turnOff = jsonText[index.ToString()]["turnOff"];
+				turnOn = jsonText[index.ToString()]["turnOn"];
+				if (turnOff != null)
+				{
+					anim = onAndOffObjects[parseInt(turnOff)].GetComponent(CharacterAnimation);
+					anim.spriteManager.HideSprite(anim.sprite);
+				}
+				if (turnOn != null)
+				{
+					anim = onAndOffObjects[parseInt(turnOn)].GetComponent(CharacterAnimation);
+					anim.spriteManager.ShowSprite(anim.sprite);
+				}
 				//var temp:Hashtable = JSONUtils.ParseJSON( textBefore );
 				//Debug.Log( "Keys : " + temp.Keys.Count );
 				//textAfter = JSONUtils.HashtableToJSON( temp );
@@ -100,10 +116,3 @@ function OnGUI()
 	}
 }
 
-function ToggleVisibility(go : GameObject, on : boolean) {
-    // toggles the visibility of this gameobject and all it's children
-    var renderers : Renderer[] = go.GetComponentsInChildren(Renderer);
-    for (var r : Renderer in renderers) {
-        r.enabled = on;
-    }
-}
