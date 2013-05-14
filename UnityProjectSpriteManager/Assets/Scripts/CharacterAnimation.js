@@ -302,8 +302,8 @@ class RicardioAnimations extends Animations {
 class IceKingAnimations extends Animations {
 	function IceKingAnimations(width : float, height : float) {
 		super(width, height);
-		standRight.SetAnim(standRight.BuildUVAnim(getUV(15, 1), size,1,1,1,1));
-		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(10, 1), size,1,1,1,1));
+		standRight.SetAnim(standRight.BuildUVAnim(getUV(5, 1), size,1,1,1,1));
+		standLeft.SetAnim(standLeft.BuildUVAnim(getUV(20, 1), size,1,1,1,1));
 		offset = new Vector3(0,1.3, 0);
 	}
 }
