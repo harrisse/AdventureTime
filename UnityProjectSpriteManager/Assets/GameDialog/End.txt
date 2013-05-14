@@ -1,0 +1,26 @@
+{"0":{"text":"Finn please don't hurt me and my penguins! I am just an old man!","face":"IceKing"},
+"1":{"text":"Hand over the Enchiridion Ice King!","face":"AttemptSurprise"},
+"2":{"text":"I would… but I… uh… funny thing is…","face":"IceKing"},
+"3":{"text":"ICE KING! Give us the book ya old man!","face":"JakeImmaKillYou"}
+"4":{"text":"I can’t! Someone stole it from me!","face":"IceKing"},
+"5":{"text":"What? Who?","face":"AttemptSurprise"},
+"6":{"text":"The most terrifying boss in this whole game!","face":"IceKing"},
+"7":{"text":"Oh no! Is it a dinosaur? Or maybe a dragon? Or maybe a sabertooth tiger?","face":"FinnFace"}
+"8":{"text":"Or it’s a dinosaur sabertoothed dragon!","face":"JakeFace"},
+"9":{"text":"Hand over the Enchiridion Ice King!","face":"AttemptSurprise"},
+"10":{"text":"No Finn and Jake, the final boss is…","face":"IceKing"},
+"11":{"text":"ME!","face":"BMOBase"}
+"12":{"text":"Oh my glob!","face":"FinnFace"},
+"13":{"text":"What?!","face":"JakeWorried"},
+"14":{"text":"This whole time it was BMO???","face":"PBFace"},
+"15":{"text":"What the lump BMO.","face":"LSPFace"}
+"16":{"text":"That’s right! I am the most villainous evil boss ever to have existed and there is no possible way to beat me!","face":"BMOBase"},
+"17":{"text":"Aw, come on BMO.","face":"FinnFace"},
+"18":{"text":"Okay Finn, if you can answer my super-secret riddle then I’ll give you the Enchiridion. But beware, no one has ever answered it right before.","face":"BMOBase"},
+"19":{"text":"hmmmm…","face":"AttemptKissy"}
+"20":{"text":"Here it comes…","face":"BMOBase"},
+"21":{"text":"What is....... my favorite color?!?","face":"BMOBase"},
+"22":{"text":"You love the color orange silly BMO!","face":"AttemptEmbarrassed"},
+"23":{"text":"Haha you’re right I do love the color orange! The Enchiridion is all yours great hero Finn!","face":"BMOBase"}
+"24":{"text":"And they lived happily ever after!","face":"AttemptSurprise"}
+}
