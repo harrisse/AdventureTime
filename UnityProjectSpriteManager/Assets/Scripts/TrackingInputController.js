@@ -26,7 +26,8 @@ function Update () {
 }
 
 function takeDamage() {
-	// FOR SAM :3
+	motor.characterAnimation.spriteManager.RemoveSprite(motor.characterAnimation.sprite);
+	Destroy(gameObject);
 }
 
 @script RequireComponent (CharacterMotor)
