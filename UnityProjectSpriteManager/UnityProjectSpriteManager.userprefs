@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\jsonGuiText.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FPSInputController.js">
     <Files>
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="66" Column="37" />
       <File FileName="Assets\Scripts\CharacterMotor.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CharacterAnimation.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\jsonGuiText.js" Line="58" Column="33" />
-      <File FileName="Assets\Scripts\HorseEndDialog.js" Line="85" Column="1" />
-      <File FileName="Assets\Scripts\Menu.js" Line="11" Column="20" />
-      <File FileName="Assets\Scripts\FPSInputController.js" Line="30" Column="55" />
-      <File FileName="Assets\Scripts\JSONUtils.js" Line="36" Column="1" />
+      <File FileName="Assets\Scripts\jsonGuiText.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HorseEndDialog.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\JSONUtils.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

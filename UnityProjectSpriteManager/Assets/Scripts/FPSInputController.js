@@ -60,12 +60,12 @@ function Update () {
 		} else if (Input.GetButton("Action") && motor.characterAnimation.animationType == "Jake") {
 			motor.characterAnimation.animationType = "SmallJake";
 			motor.characterAnimation.loadAnimationSet();
-			controller.height = .65;
-			characterCollider.height = .65;
-			controller.center.y = -.925;
-			characterCollider.center.y = -.925;
-			controller.radius = .3;
-			characterCollider.radius = .3;
+			controller.height = 0;
+			characterCollider.height = 0;
+			controller.center.y = -.675;
+			characterCollider.center.y = -.675;
+			controller.radius = .6;
+			characterCollider.radius = .6;
 			frozenTime = 3 / (7 * Time.fixedDeltaTime);
 			motor.inputMoveDirection = Vector2.zero;
 			motor.inputJump = false;
@@ -81,7 +81,7 @@ function Update () {
 			frozenTime = 3 / (7 * Time.fixedDeltaTime);
 			motor.inputMoveDirection = Vector2.zero;
 			motor.inputJump = false;
-		} else if (getCharacterButton("PB") && Application.loadedLevel >= 2) {
+		} else if (getCharacterButton("PB") && Application.loadedLevel >= 4) {
 			motor.characterAnimation.animationType = "PB";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 3;
@@ -91,7 +91,7 @@ function Update () {
 			controller.radius = .6;
 			characterCollider.radius = .6;
 			nameText.text = "PRINCESS BUBBLEGUM";
-		} else if (getCharacterButton("LSP") && Application.loadedLevel >= 4) {
+		} else if (getCharacterButton("LSP") && Application.loadedLevel >= 6) {
 			motor.characterAnimation.animationType = "LSP";
 			motor.characterAnimation.loadAnimationSet();
 			controller.height = 1.7;
