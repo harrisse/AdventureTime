@@ -17,7 +17,8 @@ private var hasRun = false;
 function Awake()
 {
 	player = GameObject.FindGameObjectWithTag("Player");
-	
+	Debug.Log(onAndOffObjects.Length);
+
 }
  
 function OnGUI()

@@ -8,7 +8,7 @@
 "6":{"text":"And I suppose it is possible that I got Ricardio to try and seduce Princess Bubblegum and you guys into some quality Ice King time.","face":"IceKing"},
 "7":{"text":"Ice King!","face":"PBFace"},
 "8":{"text":"Oh come on! I just don’t get it! I am a perfectly gnarly bro and you guys are wasting time searching for some stupid book! I mean it’s not even a good book! There aren’t even like pictures or anything in it. I feel asleep before I could read the first page last night.","face":"IceKing"},
-"9":{"text":"YOU HAD THE ENCHIRIDION THIS WHOLE TIME!?":"AttemptTalk"},
+"9":{"text":"YOU HAD THE ENCHIRIDION THIS WHOLE TIME!?","face":"AttemptTalk"},
 "10":{"text":"Ooops, I uh…. Er…. I…. What’s that Gunter? Okay Daddy’s coming. Gotta go guys, Gunter said he made a wonderful steak and lobster dinner and I shouldn’t be late!","face":"IceKing"},
 "11":{"text":"That Ice King is such an oxymoron. Let’s go get the Enchiridion from the Ice Kingdom.","face":"FinnFace"}
 }

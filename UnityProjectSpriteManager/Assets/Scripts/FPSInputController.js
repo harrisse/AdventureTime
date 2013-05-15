@@ -27,6 +27,7 @@ function Update () {
 	if (invulnerabilityTime > 0) invulnerabilityTime--;
 
 	if (Input.GetKey("escape")) Application.Quit();
+	if (Input.GetKey(KeyCode.F1)) Application.LoadLevel(9);
 	
 	if (Application.loadedLevel == 1 && transform.position.x >= enableJakeXVal) jakeEnabled = true;
 	

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\HorseEndDialog.js" />
      <Compile Include="Assets\Scripts\HorseInputController.js" />
      <Compile Include="Assets\Scripts\JSONUtils.js" />
+     <Compile Include="Assets\Scripts\Menu.js" />
      <Compile Include="Assets\Scripts\MoveToLevel.js" />
      <Compile Include="Assets\Scripts\MovingPlatform.js" />
      <Compile Include="Assets\Scripts\RicardioInputController.js" />

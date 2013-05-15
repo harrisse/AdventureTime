@@ -1,5 +1,6 @@
 
 public var dialogFile:TextAsset;
+public var onAndOffObjects : GameObject[];
 
 private var distanceToActivate : float = .5;
 private var jsonText;
@@ -23,6 +24,11 @@ function Start () {
 function Awake()
 {
 	player = GameObject.FindGameObjectWithTag("Player");
+	for (var obj : GameObject in onAndOffObjects)
+	{
+		anim = obj.GetComponent(CharacterAnimation);
+		anim.spriteManager.HideSprite(anim.sprite);
+	}
 }
 
 function OnTriggerEnter() {
@@ -50,6 +56,18 @@ function OnGUI()
 			jsonText = JSONUtils.ParseJSON(dialogFile.text);
 			stopIndex = jsonText.Keys.Count;
 			hasLoaded = true;
+			turnOff = jsonText[index.ToString()]["turnOff"];
+			turnOn = jsonText[index.ToString()]["turnOn"];
+			if (turnOff != null)
+			{
+				anim = onAndOffObjects[parseInt(turnOff)].GetComponent(CharacterAnimation);
+				anim.spriteManager.HideSprite(anim.sprite);
+			}
+			if (turnOn != null)
+			{
+				anim = onAndOffObjects[parseInt(turnOn)].GetComponent(CharacterAnimation);
+				anim.spriteManager.ShowSprite(anim.sprite);
+			}
 		}
 		if (index < stopIndex)
 		{
@@ -64,6 +82,18 @@ function OnGUI()
 			{
 				index++;
 				canIndex = false;
+				turnOff = jsonText[index.ToString()]["turnOff"];
+				turnOn = jsonText[index.ToString()]["turnOn"];
+				if (turnOff != null)
+				{
+					anim = onAndOffObjects[parseInt(turnOff)].GetComponent(CharacterAnimation);
+					anim.spriteManager.HideSprite(anim.sprite);
+				}
+				if (turnOn != null)
+				{
+					anim = onAndOffObjects[parseInt(turnOn)].GetComponent(CharacterAnimation);
+					anim.spriteManager.ShowSprite(anim.sprite);
+				}
 				//var temp:Hashtable = JSONUtils.ParseJSON( textBefore );
 				//Debug.Log( "Keys : " + temp.Keys.Count );
 				//textAfter = JSONUtils.HashtableToJSON( temp );

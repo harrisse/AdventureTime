@@ -9,5 +9,19 @@
 "7":{"text":"Jake has been working on his stretching by playing a lot of limbo. Activate his awesome limbo abilities by pressing the 'Shift' button","face":"BMOBase"},
 "8":{"text":"Jake has no in combat powers since he is feeling lazy today. To switch back to Finn, press the '1' on the number pad.","face":"BMOBase"},
 "9":{"text":"Uh oh guys, someone is at the door. I got to go. Remember I already programmed in the Ice...","face":"BMOBase"},
-"10":{"text":"OPEN THIS DOOR!","face":"","turnOff":"0"}
+"10":{"text":"OPEN THIS DOOR!","face":""},
+"11":{"text":"Hello? Is anybody home? Guys? Come hang out with your old friend the Ice king!","face":"IceKing"},
+"12":{"text":"Dude, let’s pretend like we aren’t here. I can’t stand that guy. He’s such an oxymoron.","face":"JakeFace"},
+"13":{"text":"Nah man, that wouldn’t be righteous, that would be ‘wrong-teous’. A bro’s got to do what a bro’s got to do.","face":"FinnFace"},
+"14":{"text":"What do you want Ice King?!","face":"FinnFace"},
+"15":{"text":"Hey buddies! ","face":"IceKing"},
+"16":{"text":"Why do you keep coming over here to bother us Ice King? You better not of stolen anymore princesses while we weren’t watching.","face":"JakeFace"},
+"17":{"text":"Wait, why are you bothering us instead of stealing princesses!?","face":"FinnFace"},
+"18":{"text":"I am an old man and stealing princesses is hard work you know. Especially since you two always princess blocking me!","face":"IceKing"},
+"19":{"text":"I don’t have time for you Ice King. I have to find the Enchiridion. You’re grounded until I find it!","face":"FinnFace"},
+"20":{"text":"You can’t do that!","face":"IceKing"},
+"21":{"text":"You’re grounded for two weeks!","face":"FinnFace"},
+"22":{"text":"THAT’S JUST NOT FAIR","face":"IceKing"},
+"23":{"text":"Three weeks.","face":"FinnFace"},
+"24":{"text":"Fine, but I will stop you from getting the Enchiridion so you have more time to hang out with me!","face":"IceKing","turnOff":"0"}
 }
