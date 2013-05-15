@@ -387,7 +387,7 @@ function takeDamage() {
 	if (gameObject.name == "Player") GetComponent(FPSInputController).takeDamage();
 	else if (gameObject.name == "Worm") GetComponent(BackAndForthInputController).takeDamage();
 	else if (gameObject.name == "Butterfly") GetComponent(BackAndForthInputController).takeDamage();
-	else if (gameObject.name == "LumpyPerson") GetComponent(TrackingInputController).takeDamage();
+	else if (gameObject.name == "LumpyPerson1" || gameObject.name == "LumpyPerson2" || gameObject.name == "LumpyPerson3") GetComponent(TrackingInputController).takeDamage();
 	else if (gameObject.name == "Horse") GetComponent(HorseInputController).takeDamage();
 	else if (gameObject.name == "Ricardio") GetComponent(RicardioInputController).takeDamage();
 	else if (gameObject.name == "BusinessMan") GetComponent(BusinessMen).takeDamage();
