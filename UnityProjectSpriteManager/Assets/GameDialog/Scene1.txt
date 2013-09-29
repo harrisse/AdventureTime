@@ -12,7 +12,7 @@
 "10":{"text":"I can handle anything!!! I will defeat your game BMO!","face":"FinnFace"},
 "11":{"text":"I don’t know man. Playing 'Princess Rainbow Shopping!' could be kind of fun. You could wear a tiara, go to a tea party, and buy a dress. It might be nice man.","face":"JakeHappy"},
 "12":{"text":"There is only one game I will be beating and it will not involve tiaras.","face":"FinnFace"},
-"13":{"text":"Jake: Aw man Finn, why do you always have to be such a pooty booty.","face":"JakeFace"},
+"13":{"text":"Aw man Finn, why do you always have to be such a pooty booty.","face":"JakeFace"},
 "14":{"text":"No way man, 'Princess Rainbow Shopping' is only for super ultra nerds who do not understand life outside of the nerd universe.","face":"FinnFace"},
 "15":{"text":"BMO zap me in to the super cool new video game that doesn’t involve tiarras.","face":"FinnFace"},
 "16":{"text":"Okay then, and away we go.","face":"BMOBase"}

@@ -6,7 +6,7 @@
 "4":{"text":"Princess, it’s not very math to come into someone’s room while they’re sleeping.","face":"AttemptTalk"},
 "5":{"text":"Not very math at all. I was having a dream where I was eating a sandwich but then the sandwich was all like 'stop eating me bro, I thought we were bros' and I was all like 'bro…..'","face":"JakeFace"},
 "6":{"text":"and the sandwich was all like 'bro...' and then we had a wrestling match, and went to the beach, and held a concert, and went to a museum.","face":"JakeFace"},
-"7":{"text":"Okay guys, stop goofing around. I asked BMO to zap me in here for my taxes and now I will be on my way once you give them to me.","face":"FinnFace"},
+"7":{"text":"Okay guys, stop goofing around. I asked BMO to zap me in here for my taxes and now I will be on my way once you give them to me.","face":"PBFace"},
 "8":{"text":"We would princess, but we are kind of in a video game right now.","face":"AttemptTalk"},
 "9":{"text":"How about you help us find the Enchiridion and then we pay you once the game is over? There will be some pretty mathematical adventure action.","face":"FinnFace"},
 "10":{"text":"Alright Finn, I’ll play along this time, but once we get out you guys are paying me triple the average tax.","face":"PBFace"},
